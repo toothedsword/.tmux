@@ -79,6 +79,7 @@ if ($ct =~ /[^\s]/) {
         $cf = 'sunny';
     }
     $city =~ s/,.*$//;
+    $city =~ s/\s//g;
     $w =~ s/km\/h//;
     $p =~ s/hPa//;
     $t =~ s/°C/°/;
