@@ -111,9 +111,9 @@ tmux_conf_theme_terminal_title='#h ❐ #S ● #I #W'
 tmux_conf_theme_window_status_fg='#8a8a8a'              # light gray
 tmux_conf_theme_window_status_bg='default'              # dark gray
 tmux_conf_theme_window_status_attr='none'
-tmux_conf_theme_window_status_format='#I #W'
+#tmux_conf_theme_window_status_format='#I #W'
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
-#tmux_conf_theme_window_status_format='#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}'
+tmux_conf_theme_window_status_format='#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🧷,}'
 
 # window current status style
 #   - built-in variables are:
@@ -130,20 +130,21 @@ tmux_conf_theme_window_status_current_attr='underscore'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}' 
-setw -g window-status-current-format '#{?pane_synchronized,🔗,}(#I #W)#{?window_zoomed_flag,🔍,}'
+# setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#I #W#{?window_zoomed_flag,🧷,}#(perl /home/leon/.tmux/src/git.pl #{pane_current_path}; sleep 1) '
+setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#I #W#{?window_zoomed_flag,🧷,}'
 
 # window activity status style
 tmux_conf_theme_window_status_activity_fg='#ff8800'
 tmux_conf_theme_window_status_activity_bg='default'
-tmux_conf_theme_window_status_activity_attr='none'
+tmux_conf_theme_window_status_activity_attr='bold'
 
 # window bell status style
 tmux_conf_theme_window_status_bell_fg='#ffffff'         # yellow
 tmux_conf_theme_window_status_bell_bg='default'
-tmux_conf_theme_window_status_bell_attr='blink,bold'
+tmux_conf_theme_window_status_bell_attr='bold' # blink
 
 # window last status style
-tmux_conf_theme_window_status_last_fg='#8a8a8a'         # light blue
+tmux_conf_theme_window_status_last_fg='#ff0000'         # light blue
 tmux_conf_theme_window_status_last_bg='default'
 tmux_conf_theme_window_status_last_attr='none'
 
@@ -207,7 +208,7 @@ tmux_conf_theme_status_left_bg='#default,default,default'  # yellow, pink, white
 tmux_conf_theme_status_left_attr='none,none,none'
 
 # status right style
-tmux_conf_theme_status_right_fg='#8a8a8a,#8a8a8a,#8a8a8a' # light gray, white, black
+tmux_conf_theme_status_right_fg='#8a8a8a,#8a8a8a,#ff0000' # light gray, white, black
 tmux_conf_theme_status_right_bg='default,default,default' # dark gray, red, white
 tmux_conf_theme_status_right_attr='none,none,none'
 
