@@ -4,7 +4,9 @@ chomp($np);
 if ($np > 1) {
     system("tmux resize-pane -Z");
 } else {
-    system("tmux split-window -v");    
-    system("tmux split-window -h");    
+# system("tmux send-keys C-b z Enter");
+# system("tmux send-keys C-DoubleClick1Pane Enter");
+system("tmux split-window -v");    
+system("tmux split-window -h");    
 }
 
