@@ -24,7 +24,7 @@ if (0) {
     close ($in);
 }
 
-my $cf = 'them';
+my $cf = 'sunny'; # 'them';
 my ($city,$ct,$w,$h,$p,$t,$S,$D) = `curl wttr.in/Beijing?format="%m+%l|+%C|+%w|+%h|+%P|+%t|+%S|+%D"` =~ /([^\|]+)/g;
 my $day = 0;
 my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
@@ -90,7 +90,7 @@ if ($ct =~ /[^\s]/) {
     my $sed1 = 'sed ":a;N;s/\n//g;$!ba"';
     my $sed2 = 'sed "s/\s\s/ /g"';
     my $sed3 = 'sed "s/ *| *//g"';
-    my $cmd = "(cat $cf ;echo ' $ct$w 🧭$p🌡️ $t💧$h') | $sed1 | $sed2 | $sed3 > wttr.out1";
+    my $cmd = "(cat $cf ;echo '$ct$w 🧭$p🌡️ $t💧$h') | $sed1 | $sed2 | $sed3 > wttr.out1";
     system($cmd);
     my $cmd = "echo '$city' | $sed1 > wttr.out2";
     system($cmd);

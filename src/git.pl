@@ -29,4 +29,13 @@ chdir($pcp);
 my $t = '🥕'; #'ᚠ';
 my $ba = `git branch`;
 my ($bc) = $ba =~ /\*\s*([^\s]+)\s*/;
-print("$t$bc") if defined($bc);
+
+my $gs = `git status -s`;
+my $i = '';
+$i = '🔧' if $gs =~ /\s+M\s+/;
+
+if (defined($bc)) {
+    print("$t$bc$i");
+} else {
+    print("🎈");
+}
