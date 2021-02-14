@@ -130,13 +130,13 @@ tmux_conf_theme_window_status_current_attr='underscore'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}' 
-setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#I #W#{?window_zoomed_flag,🧷,}#(perl /home/leon/.tmux/src/git.pl #{pane_current_path}|sed "s/🎈/🗞️/" ;) '
+setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#I #W#{?window_zoomed_flag,🧷,}#(perl /home/leon/.tmux/src/git.pl #{pane_current_path}|sed "s/🎈/🏷️/" ;) '
 # setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#I #W#{?window_zoomed_flag,🧷,}'
 
 # window activity status style
 tmux_conf_theme_window_status_activity_fg='#ff8800'
 tmux_conf_theme_window_status_activity_bg='default'
-tmux_conf_theme_window_status_activity_attr='bold'
+tmux_conf_theme_window_status_activity_attr='none'
 
 # window bell status style
 tmux_conf_theme_window_status_bell_fg='#ffffff'         # yellow
