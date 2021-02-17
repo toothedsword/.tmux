@@ -5,7 +5,7 @@
 #
 #        Usage: ./git.pl  
 #
-#  Description: 
+#  Description: simple_style_git
 #
 #      Options: ---
 # Requirements: ---
@@ -26,7 +26,7 @@ my $pcp = shift;
 $pcp = `pwd` if !defined($pcp);
 chdir($pcp);
 
-my $t = '🥕'; #'ᚠ';
+my $t = 'ᚠ';
 my $ba = `git branch 2>&1`;
 
 if ($ba =~ /fatal.*not\s*a\s*git\s*repository/) {
@@ -37,6 +37,6 @@ if ($ba =~ /fatal.*not\s*a\s*git\s*repository/) {
 
     my $gs = `git status -s`;
     my $i = '';
-    $i = '🔧' if $gs =~ /\s+M\s+/;
+    $i = '!' if $gs =~ /\s+M\s+/;
     print("$t$bc$i");
 }

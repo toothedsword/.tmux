@@ -27,16 +27,7 @@ $pcp = `pwd` if !defined($pcp);
 chdir($pcp);
 
 my $t = '🥕'; #'ᚠ';
-my $ba = `git branch 2>&1`;
+my $r = `git branch 2>&1`;
 
-if ($ba =~ /fatal.*not\s*a\s*git\s*repository/) {
-    print("🎈");
-} else {
-    my ($bc) = $ba =~ /\*\s*([^\s]+)\s*/;
-    $bc = '' if !defined($bc);
+print("===$r---");
 
-    my $gs = `git status -s`;
-    my $i = '';
-    $i = '🔧' if $gs =~ /\s+M\s+/;
-    print("$t$bc$i");
-}
