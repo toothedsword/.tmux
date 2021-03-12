@@ -34,7 +34,6 @@ if ($ba =~ /fatal.*not\s*a\s*git\s*repository/) {
 } else {
     my ($bc) = $ba =~ /\*\s*([^\s]+)\s*/;
     $bc = '' if !defined($bc);
-
     my $gs = `git status -s`;
     my $i = '';
     $i = '🔧' if $gs =~ /\s+M\s+/;

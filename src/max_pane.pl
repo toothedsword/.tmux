@@ -7,7 +7,7 @@ if ($np > 1) {
     if ($m) {
         system("tmux set window-active-style 'fg=6 default'");        
     } else {
-        system("tmux set window-active-style 'fg=#ff0000 bg=0'");        
+        system("tmux set window-active-style 'fg=#ff0000 bg=default'");        
     }
 } else {
     # system("tmux send-keys C-b z Enter");
