@@ -1,0 +1,28 @@
+pane	0	1	:note	0	:	1	:/media/leon/test/doc/note	0	vi	:vi note.md
+pane	0	1	:note	0	:	2	:/home/leon	0	bash	:
+pane	0	1	:note	0	:	3	:/media/leon/test/doc/note	1	bash	:
+pane	0	2	:daily	0	:-	1	:/home/leon	0	perl	:perl /home/leon/bin/vd
+pane	0	2	:daily	0	:-	2	:/media/leon/test/natapp-tmp	0	bash	:more
+pane	0	2	:daily	0	:-	3	:/home/leon	1	bash	:
+pane	0	3	:bash	0	:	1	:/home/leon/src/doc	0	vim	:vim ofee.py
+pane	0	3	:bash	0	:	2	:/home/leon	0	python3	:/usr/bin/python3 /usr/bin/ipython3
+pane	0	3	:bash	0	:	3	:/home/leon/src/doc	1	bash	:
+pane	0	4	:bash	0	:	1	:/qixiang/Document/ADS/验收材料	1	bash	:
+pane	0	4	:bash	0	:	2	:/media/leon/test/natapp-tmp	0	bash	:
+pane	0	4	:bash	0	:	3	:/media/leon/test/natapp-tmp	0	bash	:
+pane	0	5	:vi	0	:#	1	:/home/leon/ads	1	vi	:vi tc_wind7.m
+pane	0	5	:vi	0	:#	2	:/media/leon/test/ADS_light_data/nc	0	bash	:
+pane	0	5	:vi	0	:#	3	:/home/leon/ads	0	bash	:
+pane	0	6	:fusion	0	:	1	:/home/leon	1	nnn	:nnn
+pane	0	6	:fusion	0	:	2	:/media/leon/test/doc/Downloads	0	bash	:
+pane	0	7	:bash	1	:*Z	1	:/media/leon/test/dhz/code/彭博士/GL-NMIC	0	bash	:
+pane	0	7	:bash	1	:*Z	2	:/media/leon/test/doc/Downloads	0	bash	:
+pane	0	7	:bash	1	:*Z	3	:/home/leon/.tmux	1	bash	:
+window	0	1	0	:	9a57,147x41,0,0[147x33,0,0,0,147x7,0,34{73x7,0,34,13,73x7,74,34,19}]
+window	0	2	0	:-	0b38,147x41,0,0[147x28,0,0,1,147x12,0,29{73x12,0,29,7,73x12,74,29,8}]
+window	0	3	0	:	084c,147x41,0,0[147x29,0,0,11,147x11,0,30{73x11,0,30,4,73x11,74,30,12}]
+window	0	4	0	:	4c6a,147x41,0,0[147x28,0,0,5,147x12,0,29{73x12,0,29,15,73x12,74,29,18}]
+window	0	5	0	:#	6246,147x41,0,0[147x30,0,0,10,147x10,0,31{73x10,0,31,16,73x10,74,31,17}]
+window	0	6	0	:	a47c,147x41,0,0[147x29,0,0,20,147x11,0,30,21]
+window	0	7	1	:*Z	af69,145x37,0,0[145x28,0,0,22,145x8,0,29{71x8,0,29,23,73x8,72,29,24}]
+state	0	

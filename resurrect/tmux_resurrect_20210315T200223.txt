@@ -1,0 +1,15 @@
+pane	2	1	:vim	0	:#-	1	:/media/leon/test/doc/note	1	vim	:vim doc/note/note.md
+pane	2	1	:vim	0	:#-	2	:/home/leon	0	bash	:
+pane	2	1	:vim	0	:#-	3	:/home/leon	0	bash	:
+pane	2	2	:vi	1	:*	1	:/home/leon	1	vi	:vi .tmux.conf
+pane	2	3	:bash	0	:	1	:/home/leon	1	bash	:
+pane	2	4	:python3	0	:#	1	:/media/leon/test/nty/fy3	0	scp	:scp -r ads@10.24.237.31:/mnt/fy3ddata/MERSI/L1/1000M/2021/20210310 ./
+pane	2	4	:python3	0	:#	2	:/media/leon/test/nty/fy3/20210310	1	python3	:/usr/bin/python3 /usr/bin/ipython3
+pane	2	4	:python3	0	:#	3	:/media/leon/test/nty/fy3	0	bash	:
+pane	2	5	:ssh	0	:#!	1	:/home/leon	1	ssh	:ssh 10.24.45.33
+window	2	1	0	:#-	3908,147x42,0,0[147x32,0,0,4,147x9,0,33{73x9,0,33,11,73x9,74,33,12}]
+window	2	2	1	:*	b702,147x42,0,0,5
+window	2	3	0	:	b703,147x42,0,0,6
+window	2	4	0	:#	c0a6,147x42,0,0[147x29,0,0,7,147x12,0,30{73x12,0,30,13,73x12,74,30,14}]
+window	2	5	0	:#!	5bb4,147x42,0,0,15
+state	2	

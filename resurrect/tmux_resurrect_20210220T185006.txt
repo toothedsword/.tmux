@@ -1,0 +1,37 @@
+pane	leon	1	:note	0	:	1	:/home/leon/.tmux	0	vi	:vi note.md
+pane	leon	1	:note	0	:	2	:/home/leon	0	bash	:
+pane	leon	1	:note	0	:	3	:/home/leon	1	bash	:
+pane	leon	2	:plan	0	:#	1	:/home/leon	1	perl	:perl /home/leon/bin/vd
+pane	leon	2	:plan	0	:#	2	:/home/leon	0	bash	:
+pane	leon	2	:plan	0	:#	3	:/media/leon/test/doc/daily	0	bash	:
+pane	leon	2	:plan	0	:#	4	:/media/leon/test/doc/daily	0	bash	:
+pane	leon	3	:nnn	0	:	1	:/media/leon/test/doc	1	bash	:-bash
+pane	leon	3	:nnn	0	:	2	:/media/leon/test	0	bash	:
+pane	leon	3	:nnn	0	:	3	:/media/leon/test	0	bash	:
+pane	leon	4	:tc	0	:	1	:/home/leon	0	perl	:/usr/bin/perl /home/leon/bin/de tc
+pane	leon	4	:tc	0	:	2	:/home/leon	1	perl	:/usr/bin/perl /home/leon/bin/de tc
+pane	leon	4	:tc	0	:	3	:/home/leon	0	perl	:/usr/bin/perl /home/leon/bin/de tc
+pane	leon	5	:tcloc	0	:#	1	:/home/leon/ads	1	vi	:vi plot_tc_new.m
+pane	leon	5	:tcloc	0	:#	2	:/home/leon/ads	0	bash	:/usr/bin/bash /home/leon/bin/ml
+pane	leon	5	:tcloc	0	:#	3	:/media/leon/test/ADS_light_data/tc_data	0	bash	:
+pane	leon	5	:tcloc	0	:#	4	:/media/leon/test/ADS_light_data/tc_data	0	bash	:
+pane	leon	6	:bash	0	:	1	:/media/leon/test/ADS_Fogforecast/code/ADS_Fogforecast	0	bash	:
+pane	leon	6	:bash	0	:	2	:/media/leon/test	1	bash	:
+pane	leon	6	:bash	0	:	3	:/home/leon/src/wind	0	bash	:more
+pane	leon	7	:docker	0	:	1	:/home/leon	1	docker	:docker run -it -v /:/out --privileged=true 177 bash
+pane	leon	8	:vi	1	:*	1	:/home/leon	1	vi	:vi test.py
+pane	leon	8	:vi	1	:*	2	:/home/leon	0	python3	:/usr/bin/python3 /usr/bin/ipython3
+pane	leon	8	:vi	1	:*	3	:/home/leon	0	bash	:
+pane	leon	9	:bash	0	:-	1	:/media/leon/test/nmc-sw/FY3D_wind	1	bash	:
+pane	leon	9	:bash	0	:-	2	:/home/leon	0	bash	:
+pane	leon	9	:bash	0	:-	3	:/home/leon	0	bash	:
+window	leon	1	0	:	c769,145x37,0,0[145x30,0,0,5,145x6,0,31{72x6,0,31,33,72x6,73,31,34}]
+window	leon	2	0	:#	ae02,145x37,0,0[145x30,0,0{88x30,0,0,2,56x30,89,0,26},145x6,0,31{72x6,0,31,7,72x6,73,31,8}]
+window	leon	3	0	:	7220,145x37,0,0[145x28,0,0,14,145x8,0,29{72x8,0,29,22,72x8,73,29,23}]
+window	leon	4	0	:	3dc1,145x37,0,0[145x29,0,0,15,145x7,0,30{72x7,0,30,16,72x7,73,30,17}]
+window	leon	5	0	:#	e69d,145x37,0,0[145x25,0,0,18,145x11,0,26{64x11,0,26[64x5,0,26,20,64x5,0,32,25],80x11,65,26,19}]
+window	leon	6	0	:	f327,145x37,0,0[145x17,0,0,30,145x19,0,18{72x19,0,18,31,72x19,73,18,32}]
+window	leon	7	0	:	6435,145x37,0,0,35
+window	leon	8	1	:*	565f,145x37,0,0[145x28,0,0,36,145x8,0,29{73x8,0,29,37,71x8,74,29,38}]
+window	leon	9	0	:-	da3c,145x37,0,0[145x29,0,0,40,145x7,0,30{72x7,0,30,41,72x7,73,30,42}]
+state	leon	

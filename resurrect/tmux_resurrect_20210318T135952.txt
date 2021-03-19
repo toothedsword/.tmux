@@ -1,0 +1,32 @@
+pane	0	1	:note	0	:#	1	:/media/leon/test/doc/note	1	vi	:vi note/note.md
+pane	0	1	:note	0	:#	2	:/media/leon/test/doc/note	0	bash	:
+pane	0	1	:note	0	:#	3	:/home/leon	0	bash	:
+pane	0	2	:daily	0	:#	1	:/home/leon	1	perl	:perl /home/leon/bin/vd
+pane	0	2	:daily	0	:#	2	:/media/leon/test/natapp-tmp	0	bash	:more
+pane	0	2	:daily	0	:#	3	:/home/leon	0	bash	:
+pane	0	3	:vim	0	:#	1	:/home/leon/src/doc	1	vim	:vim ofee.py
+pane	0	3	:vim	0	:#	2	:/home/leon	0	python3	:/usr/bin/python3 /usr/bin/ipython3
+pane	0	3	:vim	0	:#	3	:/home/leon/src/doc	0	bash	:
+pane	0	4	:vi	0	:#	1	:/media/leon/test/nmc-sw/FY3D_conv	1	vi	:vi test.py
+pane	0	4	:vi	0	:#	2	:/media/leon/test/nmc-sw/FY3D_conv	0	bash	:
+pane	0	4	:vi	0	:#	3	:/home/leon/ads/fig	0	bash	:
+pane	0	5	:vi	0	:#	1	:/home/leon/ads	1	vi	:vi tc_wind7.m
+pane	0	5	:vi	0	:#	2	:/media/leon/test/ADS_light_data/nc	0	bash	:
+pane	0	5	:vi	0	:#	3	:/home/leon/ads	0	bash	:
+pane	0	6	:fusion	1	:*	1	:/home/leon	1	nnn	:nnn
+pane	0	6	:fusion	1	:*	2	:/media/leon/test/doc/Downloads	0	bash	:
+pane	0	7	:LY	0	:#-	1	:/home/leon/src/pl/ly	1	vi	:vi ly.pl
+pane	0	7	:LY	0	:#-	2	:/home/leon/src/pl/ly	0	bash	:
+pane	0	7	:LY	0	:#-	3	:/home/leon	0	bash	:
+pane	0	8	:bash	0	:	1	:/media/leon/test/nty/clm	1	bash	:
+pane	0	8	:bash	0	:	2	:/home/leon	0	bash	:
+pane	0	8	:bash	0	:	3	:/home/leon	0	bash	:
+window	0	1	0	:#	a955,145x37,0,0[145x31,0,0,0,145x5,0,32{72x5,0,32,13,72x5,73,32,19}]
+window	0	2	0	:#	55aa,145x37,0,0[145x26,0,0,1,145x10,0,27{72x10,0,27,7,72x10,73,27,8}]
+window	0	3	0	:#	2472,145x37,0,0[145x27,0,0,11,145x9,0,28{72x9,0,28,4,72x9,73,28,12}]
+window	0	4	0	:#	d664,145x37,0,0[145x26,0,0,5,145x10,0,27{72x10,0,27,15,72x10,73,27,18}]
+window	0	5	0	:#	ce24,145x37,0,0[145x28,0,0,10,145x8,0,29{72x8,0,29,16,72x8,73,29,17}]
+window	0	6	1	:*	d62e,145x37,0,0[145x27,0,0,20,145x9,0,28,21]
+window	0	7	0	:#-	efbc,145x37,0,0[145x27,0,0,28,145x9,0,28{72x9,0,28,29,72x9,73,28,30}]
+window	0	8	0	:	a295,145x37,0,0[145x30,0,0,32,145x6,0,31{72x6,0,31,33,72x6,73,31,34}]
+state	0	

@@ -1,0 +1,50 @@
+pane	leon	1	:note	0	:	1	:/media/leon/test/doc/note	0	vi	:vi doc/note/note.md
+pane	leon	1	:note	0	:	2	:/home/leon/.vim/bundle/python-mode	1	bash	:
+pane	leon	1	:note	0	:	3	:/home/leon/src/pl	0	bash	:
+pane	leon	2	:plan	0	:	1	:/media/leon/test/doc/daily	0	perl	:perl /home/leon/bin/vd
+pane	leon	2	:plan	0	:	2	:/media/leon/test/doc/daily	0	bash	:
+pane	leon	2	:plan	0	:	3	:/media/leon/test/doc/DQ2020-001	1	bash	:
+pane	leon	2	:plan	0	:	4	:/media/leon/test/TphoonDet	0	bash	:
+pane	leon	3	:nnn	0	:	1	:/media/leon/test/doc	1	bash	:-bash
+pane	leon	3	:nnn	0	:	2	:/media/leon/test	0	bash	:
+pane	leon	3	:nnn	0	:	3	:/media/leon/test	0	bash	:
+pane	leon	4	:tc	0	:	1	:/home/leon	1	perl	:/usr/bin/perl /home/leon/bin/de tc
+pane	leon	4	:tc	0	:	2	:/home/leon	0	perl	:/usr/bin/perl /home/leon/bin/de tc
+pane	leon	4	:tc	0	:	3	:/home/leon	0	perl	:/usr/bin/perl /home/leon/bin/de tc
+pane	leon	5	:tcloc	0	:	1	:/home/leon/ads	1	bash	:
+pane	leon	5	:tcloc	0	:	2	:/home/leon	0	bash	:
+pane	leon	5	:tcloc	0	:	3	:/home/leon/ads	0	bash	:/usr/bin/bash /home/leon/bin/ml
+pane	leon	5	:tcloc	0	:	4	:/media/leon/test/ADS_light_data	0	bash	:
+pane	leon	5	:tcloc	0	:	5	:/media/leon/test/ADS_light_data/tc_data	0	bash	:
+pane	leon	6	:wind	0	:	1	:/home/leon	0	vi	:vi test.py
+pane	leon	6	:wind	0	:	2	:/home/leon/src/wind	1	bash	:
+pane	leon	6	:wind	0	:	3	:/home/leon	0	bash	:
+pane	leon	7	:ldx	0	:#	1	:/home/leon/TphoonDet	1	vi	:vi test.m
+pane	leon	7	:ldx	0	:#	2	:/media/leon/test/TphoonDet	0	bash	:
+pane	leon	7	:ldx	0	:#	3	:/home/leon/TphoonDet	0	bash	:/usr/bin/bash /home/leon/bin/ml
+pane	leon	7	:ldx	0	:#	4	:/home/leon/TphoonDet	0	bash	:
+pane	leon	7	:ldx	0	:#	5	:/home/leon/TphoonDet	0	bash	:
+pane	leon	7	:ldx	0	:#	6	:/home/leon/TphoonDet	0	bash	:
+pane	leon	8	:GIF	0	:	1	:/home/leon/bin	0	vi	:vi cma2git
+pane	leon	8	:GIF	0	:	2	:/media/leon/test/natapp-tmp	1	bash	:
+pane	leon	8	:GIF	0	:	3	:/media/leon/test/cma2loc/ADS_cma2loc_2021-2-24_2348	0	bash	:
+pane	leon	8	:GIF	0	:	4	:/home/leon	0	bash	:
+pane	leon	8	:GIF	0	:	5	:/home/leon	0	bash	:
+pane	leon	9	:vi	1	:*	1	:/home/leon/.tmux	1	vi	:vi max_pane.pl
+pane	leon	9	:vi	1	:*	2	:/home/leon/.tmux	0	bash	:
+pane	leon	9	:vi	1	:*	3	:/home/leon/.tmux/src	0	bash	:
+pane	leon	9	:vi	1	:*	4	:/home/leon/src/zw/atmospheric/msis/msise90	0	bash	:
+pane	leon	10	:ldx	0	:-	1	:/media/leon/test/ldx/20210225/20210224	1	bash	:
+pane	leon	10	:ldx	0	:-	2	:/home/leon	0	bash	:
+pane	leon	10	:ldx	0	:-	3	:/home/leon	0	bash	:
+window	leon	1	0	:	1c90,147x41,0,0[147x32,0,0,5,147x8,0,33{73x8,0,33,34,73x8,74,33,112}]
+window	leon	2	0	:	6afe,147x41,0,0[147x31,0,0,8,147x9,0,32{50x9,0,32,78,48x9,51,32,79,47x9,100,32,117}]
+window	leon	3	0	:	c2c3,147x41,0,0[147x30,0,0,14,147x10,0,31{73x10,0,31,22,73x10,74,31,23}]
+window	leon	4	0	:	affb,147x41,0,0[147x31,0,0,15,147x9,0,32{73x9,0,32,16,73x9,74,32,17}]
+window	leon	5	0	:	6ea5,147x41,0,0[147x29,0,0{87x29,0,0,18,59x29,88,0,48},147x11,0,30{65x11,0,30[65x5,0,30,20,65x5,0,36,25],81x11,66,30,19}]
+window	leon	6	0	:	e433,147x41,0,0[147x30,0,0,36,147x10,0,31{74x10,0,31,37,72x10,75,31,38}]
+window	leon	7	0	:#	727a,145x37,0,0[145x26,0,0{96x26,0,0,66,48x26,97,0,135},145x10,0,27{69x10,0,27[69x4,0,27,64,69x5,0,32,132],75x10,70,27[75x1,70,27,67,75x8,70,29,133]}]
+window	leon	8	0	:	70fe,147x41,0,0[147x27,0,0,84,147x13,0,28{72x13,0,28[72x6,0,28,100,72x6,0,35,106],74x13,73,28[74x6,73,28,86,74x6,73,35,99]}]
+window	leon	9	1	:*	38a6,147x41,0,0[147x29,0,0{103x29,0,0,118,43x29,104,0,144},147x11,0,30{75x11,0,30,121,71x11,76,30,122}]
+window	leon	10	0	:-	03bc,147x41,0,0[147x32,0,0,123,147x8,0,33{73x8,0,33,124,73x8,74,33,125}]
+state	leon	
