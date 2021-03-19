@@ -223,7 +223,9 @@ bind-key -n M-DoubleClick1Status run "tmux kill-window"
 bind-key -n DoubleClick1Border run "perl ~/.tmux/src/syn.pl #{pane_synchronized}"
 # bind -n C-DoubleClick1Pane run 'cut -c3- ~/.tmux.conf | sh -s _maximize_pane "#{session_name}" #D'
 # bind-key -n DoubleClick1Pane run 'perl ~/bin/fig.pl'
-# bind-key -n M-DoubleClick1Pane run "tmux kill-pane"
+# bind-key -n M-DoubleClick1Pane run "tmux last window"
+unbind-key -n M-DoubleClick1Pane
+
 bind u run "perl ~/.tmux/src/change_git.pl"
 bind C-b run "perl ~/.bash/change.pl"
 bind t run "perl ~/.tmux/src/test.pl #{window_zoomed_flag}"
