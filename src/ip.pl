@@ -28,6 +28,7 @@ my (@ip) = $ip =~ /([^\s]+:\s*flags=.+?\d+\.\d+\.\d+\.\d+)/g;
 my $rt = '';
 for my $ip (@ip) {
     $ip =~ s/^([^\s]+:)\s*.+?(\d+\.\d+\.\d+\.\d+)/$1$2/; 
-    $rt = "$rt$ip:" if $ip =~ /^[ew]/;
+    $rt = "$rt$ip|" if $ip =~ /^[ew]/;
 }
+$rt =~ s/\|\s*$//;
 print($rt);
