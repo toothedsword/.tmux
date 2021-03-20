@@ -23,7 +23,7 @@ my $ip = `ifconfig`;
 $ip =~ s/\n/ /g;
 # print($ip);
 
-my (@ip) = $ip =~ /([^\s]+:\s*flags=.+?\d+\.\d+\.\d+\.\d+)/g;
+my (@ip) = $ip =~ /([^\s]+:\s*flags=(?:(?!flags=).)+?\d+\.\d+\.\d+\.\d+)/g;
 
 my $rt = '';
 for my $ip (@ip) {
