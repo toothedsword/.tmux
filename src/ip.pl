@@ -31,6 +31,6 @@ for my $ip (@ip) {
     $rt = "$rt$ip|" if $ip =~ /^[ew]/;
 }
 $rt =~ s/\|\s*$//;
-$rt =~ s/([\d\w]{6})[\d\w]+:/$1:/;
+$rt =~ s/([\d\w]{1})[\d\w]+:/$1/g;
 
 print($rt);

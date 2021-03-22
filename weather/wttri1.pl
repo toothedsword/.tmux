@@ -92,6 +92,7 @@ if ($ct =~ /[^\s]/) {
     my $sed3 = 'sed "s/ *| *//g"';
     my $cmd = "(cat $cf ;echo '$ct$w 🧭$p🌡️ $t💧$h') | $sed1 | $sed2 | $sed3 > wttr.out1";
     system($cmd);
+    $city =~ s/(\w)/ $1/;
     my $cmd = "echo '$city' | $sed1 > wttr.out2";
     system($cmd);
 } else {
