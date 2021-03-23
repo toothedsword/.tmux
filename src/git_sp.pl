@@ -27,15 +27,15 @@ $pcp = `pwd` if !defined($pcp);
 chdir($pcp);
 
 my $t = 'ᚠ';
-my $ba = `git branch 2>&1`;
+my $ba = `timeout 2 git branch 2>&1`;
 
 if ($ba =~ /fatal.*not\s*a\s*git\s*repository/) {
-    print("🎈");
+    print("not git repository");
 } else {
     my ($bc) = $ba =~ /\*\s*([^\s]+)\s*/;
     $bc = '' if !defined($bc);
 
-    my $gs = `git status -s`;
+    my $gs = `timeout 2 git status -s`;
     my $i = '';
     $i = '!' if $gs =~ /\s+M\s+/;
     print("$t$bc$i");
