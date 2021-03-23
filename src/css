@@ -1,0 +1,57 @@
+#!/usr/bin/env perl
+# /**---------------------------------------------------------------------------
+#
+#         File: check.pl
+#
+#        Usage: ./check.pl  
+#
+#  Description: 
+#
+#      Options: ---
+# Requirements: ---
+#         Bugs: ---
+#        Notes: ---
+#       Author: Liang Peng (...), pengliang@piesat
+# Organization: ...
+#      Version: 1.0
+#      Created: 2021年03月22日 17时46分56秒
+#     Revision: ---
+# ----------------------------------------------------------------------------*/
+
+use strict;
+use warnings;
+use utf8;
+
+my $cmd = shift;
+if ($cmd =~ /^grep\s*/) {
+    print('-------\n');
+} else {
+    $cmd = "grep $cmd";
+}
+
+my $s = `tmux -L leon2 list-sessions`;
+$s =~ s/\n/|/g;
+my (@sns) = "|$s" =~ /\|\s*(\d+)\s*\:/g;
+
+my $wd;
+for my $sn (@sns) {
+    my $w = `tmux -L leon2 list-windows -t $sn`;
+    $w =~ s/\n/|/g;
+    my (@wns) = "|$w" =~ /\|\s*(\d+)\s*\:/g;
+    for my $wn (@wns) {
+        my $info = `tmux -L leon2 capture-pane -t $sn:$wn.1 -pS -32768 | $cmd | tail -n1`;
+        my ($info2) = $info =~ /\|(.*)\|/;
+        if (defined($info2) and defined($info)) {
+            if ($info2 =~ /[^\s]/) {
+                $info = $info2;
+            } else {
+                $info =~ s/\s*tmuxshow\s*//;
+            }
+        }
+        $info =~ s/^\s*(.{20}).*$/$1/;
+        $info =~ s/[^\s\w\d]//g;
+        $info =~ s/\s*$//;
+        system("echo $info > ~/.tmux/src/nout") if $info =~ /[^\s]/;
+    }
+}
+

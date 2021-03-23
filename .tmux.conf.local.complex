@@ -189,7 +189,7 @@ tmux_conf_theme_right_separator_sub=''
 # tmux_conf_theme_status_left=' 🏠 #{username} 🎲' #💻
 # tmux_conf_theme_status_left=' ⚓ #{username} 👣' #💻
 # tmux_conf_theme_status_left='#[fg=1] USER:#{username},  ^A #[fg=2] WINDOW:'
-tmux_conf_theme_status_left=' ❒ ^A  #[fg=1] 🏠 #{username}, #[fg=2] 👣:'
+tmux_conf_theme_status_left='#[fg=1] 🏠 #{username}, ❒ ^A #[fg=2] Windows:'
 # tmux_conf_theme_status_left=' 🎨 #{username} 🎲' 
 # tmux_conf_theme_status_left=' 🏠 #{username} 💻'
 # tmux_conf_theme_status_left=' 🏠 #{username} 🧱'
