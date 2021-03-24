@@ -1,0 +1,1 @@
+git status -s | sed ":a;N;s/\n/|/g;ta"| sed "s/ *M/|M/" | sed "s/\s\s*[^\|]*\|//g" | sed "s/|//g" | sed "s/\(.\)\1*/\1/g"
