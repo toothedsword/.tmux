@@ -29,26 +29,27 @@ if ($cmd =~ /^\s*grep\s*/) {
     $cmd = "grep $cmd";
 }
 
-my $s = `tmux -L leon2 list-sessions`;
-$s =~ s/\n/|/g;
-my (@sns) = "|$s" =~ /\|\s*(\d+)\s*\:/g;
+foreach my $L (qw(leon leon1 leon2)) { 
+    my $s = `tmux -L $L list-sessions`;
+    $s =~ s/\n/|/g;
+    my (@sns) = "|$s" =~ /\|\s*(\d+)\s*\:/g;
 
-my $wd;
-for my $sn (@sns) {
-    my $w = `tmux -L leon2 list-windows -t $sn`;
-    $w =~ s/\n/|/g;
-    my (@wns) = "|$w" =~ /\|\s*(\d+)\s*\:/g;
-    for my $wn (@wns) {
-        my $info = `tmux -L leon2 capture-pane -t $sn:$wn.1 -pS -32768 | $cmd | tail -n1`;
-        if (defined($info)) {
-            my ($info2) = $info =~ /\<\|(.*)\|\>/;
-            if (defined($info2)) {
-                $info2 =~ s/^\s*(.{20}).*$/$1/;
-                $info2 =~ s/[^\s\w\d]//g;
-                $info2 =~ s/\s*$//;
-                system("echo $info2 > ~/.tmux/src/nout") if $info2 =~ /[^\s]/;
+    my $wd;
+    for my $sn (@sns) {
+        my $w = `tmux -L $L list-windows -t $sn`;
+        $w =~ s/\n/|/g;
+        my (@wns) = "|$w" =~ /\|\s*(\d+)\s*\:/g;
+        for my $wn (@wns) {
+            my $info = `tmux -L $L capture-pane -t $sn:$wn.1 -pS -32768 | $cmd | tail -n1`;
+            if (defined($info)) {
+                my ($info2) = $info =~ /\<\|(.*)\|\>/;
+                if (defined($info2)) {
+                    $info2 =~ s/[^\s\w\d\.\;\:]//g;
+                    $info2 =~ s/^\s*(.{20}).*$/$1/;
+                    $info2 =~ s/\s*$//;
+                    system("echo $info2 > ~/.tmux/src/nout") if $info2 =~ /[^\s]/;
+                }
             }
         }
     }
 }
-

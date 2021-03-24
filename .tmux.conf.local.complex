@@ -113,7 +113,8 @@ tmux_conf_theme_window_status_bg='default'              # dark gray
 tmux_conf_theme_window_status_attr='none'
 #tmux_conf_theme_window_status_format='#I #W'
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
-tmux_conf_theme_window_status_format='#(perl ~/.tmux/src/cc2.pl #I) #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🧷,}'
+# tmux_conf_theme_window_status_format='#(perl ~/.tmux/src/cc2.pl #I) #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🧷,}'
+tmux_conf_theme_window_status_format='¶#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🧷,}'
 
 # window current status style
 #   - built-in variables are:
@@ -131,7 +132,8 @@ tmux_conf_theme_window_status_current_attr='underscore'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}' # 🏷️" 
 # setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#(perl ~/.tmux/src/cc2.pl #I) #W#{?window_zoomed_flag,🔍,}#(perl /home/leon/bin/git.pl #{pane_current_path}|sed "s/🎈//" ;) '
-setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#(perl ~/.tmux/src/cc2.pl #I) #W#{?window_zoomed_flag,🔍,} '
+# setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#(perl ~/.tmux/src/cc2.pl #I) #W#{?window_zoomed_flag,🔍,} '
+setw -g window-status-current-format ' #{?pane_synchronized,🔗,}¶#I #W#{?window_zoomed_flag,🔍,} '
 # setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#I #W#{?window_zoomed_flag,🧷,}'
 
 # window activity status style
@@ -202,7 +204,7 @@ tmux_conf_theme_status_left='#[fg=1] 🏠 #{username}, ❒ ^A #[fg=2] Windows:'
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_vbar,#{battery_vbar},} #(perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) 📅 %b%d 🕘 %R #(tail ~/src/weather/wttr.out2; sleep 5) #(perl .tmux.1.pl; sleep 1) '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root}#{?battery_status,#{battery_status},}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) 📅#{?#{==:#{username},root},#[fg=red],}%b%d 🕘%R #(tail ~/.tmux/weather/wttr.out2; sleep 500) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3)#{loadavg}#[inherit]'
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} ᚠ #(cd #{pane_current_path};git branch|head -n1;sleep 1) #(cd #{pane_current_path}; timeout 2 git status -s 2>&1|head -n1| sed "s/repository.*/repository/"; sleep 1) #(perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} ᚠ #(cd #{pane_current_path};git branch|head -n1;sleep 1) #(cd #{pane_current_path};~/.tmux/src/githead;sleep 1) #(cd #{pane_current_path}; ~/.tmux/src/gitstatus; sleep 1)  #(perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} ᚠ #(cd #{pane_current_path};git branch|head -n1;sleep 1) #(cd #{pane_current_path};~/.tmux/src/githead;sleep 1) #(cd #{pane_current_path}; perl ~/.tmux/src/gitstatus1.pl; sleep 1)  #(perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
 # tmux_conf_theme_status_right='#(perl /home/leon/.tmux/src/git.pl #{pane_current_path}; sleep 1) #(cd #{pane_current_path}; git status -s; sleep 1) #{prefix}#{pairing}#{synchronized}#{root} #(perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
 # tmux_conf_theme_status_right='#(cd #{pane_current_path}; git status -s; sleep 1) #{prefix}#{pairing}#{synchronized}#{root} #(perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},} 📅 %b%d 🕘 %R #(cd ~; perl .tmux.1.pl 2>/dev/null ; sleep 1) '
