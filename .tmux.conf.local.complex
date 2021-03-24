@@ -114,7 +114,7 @@ tmux_conf_theme_window_status_attr='none'
 #tmux_conf_theme_window_status_format='#I #W'
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
 # tmux_conf_theme_window_status_format='#(perl ~/.tmux/src/cc2.pl #I) #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🧷,}'
-tmux_conf_theme_window_status_format='¶#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🧷,}'
+tmux_conf_theme_window_status_format='¶#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}'
 
 # window current status style
 #   - built-in variables are:
