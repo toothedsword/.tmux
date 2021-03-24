@@ -33,7 +33,7 @@ for my $ip (@ip) {
 $rt =~ s/\|\s*$//;
 $rt =~ s/([\d\w]{1})[\d\w]+:/$1:/g;
 $rt =~ s/e:/ 🖧 /g;
-$rt =~ s/w:/ 🕸 /g;
+$rt =~ s/w:/ 🕸   /g;
 $rt =~ s/\|//g;
-
+$rt =~ s/  //g;
 print($rt);

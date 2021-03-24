@@ -22,8 +22,8 @@ use strict;
 use warnings;
 use utf8;
 
-my $cmd = shift;
-if ($cmd =~ /^grep\s*/) {
+my $cmd = "\\|";
+if ($cmd =~ /^\s*grep\s*/) {
     print('-------\n');
 } else {
     $cmd = "grep $cmd";
@@ -40,18 +40,15 @@ for my $sn (@sns) {
     my (@wns) = "|$w" =~ /\|\s*(\d+)\s*\:/g;
     for my $wn (@wns) {
         my $info = `tmux -L leon2 capture-pane -t $sn:$wn.1 -pS -32768 | $cmd | tail -n1`;
-        my ($info2) = $info =~ /\|(.*)\|/;
-        if (defined($info2) and defined($info)) {
-            if ($info2 =~ /[^\s]/) {
-                $info = $info2;
-            } else {
-                $info =~ s/\s*tmuxshow\s*//;
+        if (defined($info)) {
+            my ($info2) = $info =~ /\<\|(.*)\|\>/;
+            if (defined($info2)) {
+                $info2 =~ s/^\s*(.{20}).*$/$1/;
+                $info2 =~ s/[^\s\w\d]//g;
+                $info2 =~ s/\s*$//;
+                system("echo $info2 > ~/.tmux/src/nout") if $info2 =~ /[^\s]/;
             }
         }
-        $info =~ s/^\s*(.{20}).*$/$1/;
-        $info =~ s/[^\s\w\d]//g;
-        $info =~ s/\s*$//;
-        system("echo $info > ~/.tmux/src/nout") if $info =~ /[^\s]/;
     }
 }
 
