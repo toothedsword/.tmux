@@ -1,0 +1,42 @@
+#!/usr/bin/env perl
+# /**---------------------------------------------------------------------------
+#
+#         File: check.pl
+#
+#        Usage: ./check.pl  
+#
+#  Description: 
+#
+#      Options: ---
+# Requirements: ---
+#         Bugs: ---
+#        Notes: ---
+#       Author: Liang Peng (...), pengliang@piesat
+# Organization: ...
+#      Version: 1.0
+#      Created: 2021年03月22日 17时46分56秒
+#     Revision: ---
+# ----------------------------------------------------------------------------*/
+
+use strict;
+use warnings;
+use utf8;
+
+my $wd = shift;
+my $cmd = shift;
+if ($cmd =~ /^grep\s*/) {
+    print('-------\n');
+} else {
+    $cmd = "grep $cmd";
+}
+
+while(1) {
+    my $info = `tmux -L leon2 capture-pane -t $wd -pS -32768 | $cmd | tail -n1`;
+    $info =~ s/^\s*(.{20}).*$/$1/;
+    $info =~ s/[^\s\w\d\.\,\;\-\=\+\:\/\\]//g;
+    $info =~ s/\s*\.\s*$//;
+    $info =~ s/\s*$//;
+    system("echo $info > ~/.tmux/src/nout0");
+    sleep(5);
+}
+
