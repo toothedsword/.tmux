@@ -1,1 +1,1 @@
-timeout 2 git status -s 2>&1|head -n1| sed "s/repository.*/repository/"| sed "s/\(.\{30\}\).*/\1.../"
+timeout 2 git status -s 2>&1|head -n1| sed "s/repository.*/repository/"| sed "s/\(.\{20\}\).*/\1.../"

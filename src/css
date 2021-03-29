@@ -47,7 +47,7 @@ foreach my $L (qw(leon leon1 leon2)) {
                     $info2 =~ s/[^\s\w\d\.\;\:]//g;
                     $info2 =~ s/^\s*(.{20}).*$/$1/;
                     $info2 =~ s/\s*$//;
-                    system("echo $info2 > ~/.tmux/src/nout") if $info2 =~ /[^\s]/;
+                    system("echo $info2 > ~/.tmux/src/nout1") if $info2 =~ /[^\s]/;
                 }
             }
         }
