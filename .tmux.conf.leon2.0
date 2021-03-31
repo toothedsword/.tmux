@@ -1,0 +1,13 @@
+# file: .tmux.conf.0
+set pane-border-style 'fg=5 bg=#666666'
+set pane-active-border-style 'fg=4 bg=#666666'
+set window-style 'fg=5 bg=#666666'
+set window-active-style 'fg=4 bg=#666666'
+set window-status-style 'fg=5 bg=#666666'
+set status-left-style 'fg=5 bg=#666666'
+set status-right-style 'fg=5 bg=#666666'
+set status-style 'fg=5 bg=#666666'
+set window-status-activity-style 'fg=2 bg=#666666'
+set window-status-last-style 'fg=5 bg=#666666'
+set window-status-bell-style 'bg=#666666 fg=7'
+

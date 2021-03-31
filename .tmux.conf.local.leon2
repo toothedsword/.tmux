@@ -123,9 +123,9 @@ tmux_conf_theme_window_status_format='#(perl /home/leon/.tmux/src/roma.pl #I) #W
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_current_fg='#00afff'      # black
-tmux_conf_theme_window_status_current_bg='default'      # light blue
-tmux_conf_theme_window_status_current_attr='underscore'
+tmux_conf_theme_window_status_current_fg='#ffffff'      # black
+tmux_conf_theme_window_status_current_bg='#444444'      # light blue
+tmux_conf_theme_window_status_current_attr='bold'
 #tmux_conf_theme_window_status_current_format='#I #W'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
@@ -187,7 +187,7 @@ tmux_conf_theme_right_separator_sub=''
 # tmux_conf_theme_status_left='⛪ #S ⚓ #{?uptime_y, #{uptime_y}y,}#{?uptime_d,#{uptime_d}d,}#{?uptime_h,#{uptime_h}h,}#{?uptime_m,#{uptime_m}m,} 🎲'
 # tmux_conf_theme_status_left=' 🏠 #{username} 🎲' #💻
 # tmux_conf_theme_status_left=' ⚓ #{username} 👣' #💻
-tmux_conf_theme_status_left=' #(cd ~/.tmux/weather; tail wttr.out2; sleep 5) \U1F5CD  ^Q  '
+tmux_conf_theme_status_left=' 📅 %b%d 🕘 %R \U1F5CD  ^Q  '
 # tmux_conf_theme_status_left=' 🎨 #{username} 🎲' 
 # tmux_conf_theme_status_left=' 🏠 #{username} 💻'
 # tmux_conf_theme_status_left=' #(cd ~/.tmux/weather; perl wttri1.pl > /dev/null 2>&1; tail wttr.out1; sleep 5) 🧱'
@@ -198,7 +198,8 @@ tmux_conf_theme_status_left=' #(cd ~/.tmux/weather; tail wttr.out2; sleep 5) \U1
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_percentage,#{battery_percentage},}, 📅 %R, ⌚%d%b 💻#{username}#{root}@#{hostname}'
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{battery_percentage}, 📅 %b%d日 🕘 %R '
 # tmux_conf_theme_status_right=' <<<<<<<<<<<'
-tmux_conf_theme_status_right='/#(perl ~/.tmux/src/css2; tail ~/.tmux/src/nout2; sleep 1)\ \#(tail ~/.tmux/src/nout0; sleep 1)/ #{prefix}#{pairing}#{synchronized} #{?uptime_y, #{uptime_y}y,}#{?uptime_d,#{uptime_d}d,}#{?uptime_h,#{uptime_h}h,}#{?uptime_m,#{uptime_m}m,} #(perl /home/leon/.tmux/src/ip.pl) 📅 %b%d 🕘 %R '
+# tmux_conf_theme_status_right='#(perl /home/leon/.tmux/src/finish_monitoring.pl /home/leon/.tmux/src/finish_monitorin_id; sleep 2) #(tail -n1 /home/leon/.tmux/src/pane_change; sleep 2)/#(perl ~/.tmux/src/css2; tail ~/.tmux/src/nout2; sleep 1)\ \#(tail ~/.tmux/src/nout0; sleep 1)/ #{prefix}#{pairing}#{synchronized} #{?uptime_y, #{uptime_y}y,}#{?uptime_d,#{uptime_d}d,}#{?uptime_h,#{uptime_h}h,}#{?uptime_m,#{uptime_m}m,} #(perl /home/leon/.tmux/src/ip.pl) '
+tmux_conf_theme_status_right='#(perl /home/leon/.tmux/src/finish_monitoring.pl /home/leon/.tmux/src/finish_monitorin_id; sleep 2) #(tail -n1 /home/leon/.tmux/src/pane_change; sleep 2)/#(perl ~/.tmux/src/css2; tail ~/.tmux/src/nout2; sleep 1)\ \#(tail ~/.tmux/src/nout0; sleep 1)/ #{prefix}#{pairing}#{synchronized} #(perl /home/leon/.tmux/src/ip.pl) '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},} 📅 %b%d 🕘 %R #(cd ~; perl .tmux.2.pl 2>/dev/null ; sleep 1) '
 # #(echo `tail ~/test`)'
 #tmux_conf_theme_status_right='#{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b'
@@ -358,7 +359,7 @@ set window-status-style 'bg=default fg=7'
 set window-status-activity-style 'bg=default fg=2'
 set window-status-bell-style 'bg=default fg=7'
 set window-status-last-style 'bg=default fg=7'
-set-option -g status-justify centre  # centre left
+set-option -g status-justify left # centre  # centre left
 set-option -g status-position top
 
 #set pane-border-style 'fg=5 bg=default'

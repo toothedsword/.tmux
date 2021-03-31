@@ -44,6 +44,9 @@ unbind -n C-space
 # reload configuration
 bind r source-file ~/.tmux.conf.leon2 \; display '~/.tmux.conf.leon2 sourced'
 bind o run "perl ~/.tmux/src/source_.tmux.conf.o.pl";
+# bind n run "perl /home/leon/.tmux/src/finish_monitoring.pl #{pane_id}"
+unbind n
+bind n run "echo 'leon2 #{pane_id}' > ~/.tmux/src/finish_monitorin_id"
 
 # -- display -------------------------------------------------------------------
 
@@ -117,7 +120,6 @@ bind-key -n C-q run 'tmux -L leon2 set status';
 bind-key -n DoubleClick1StatusLeft run 'tmux -L leon2 set status'; 
 
 # window navigation
-unbind n
 unbind p
 bind -r C-h previous-window # select previous window
 # bind -r C-l next-window     # select next window
@@ -215,11 +217,10 @@ bind t bind-key -n DoubleClick1Pane resize-pane -Z
 bind T unbind-key -n DoubleClick1Pane
 # unbind z
 # bind z run "perl ~/.tmux/src/max_pane.pl #{window_zoomed_flag}" # bind-key -n DoubleClick1Pane resize-pane -Z
-
 # bind-key -n DoubleClick1StatusLeft choose-window -Z -F '#W  ->  [#{pane_current_command}]#{pane_current_path}' # "
 # bind-key -n DoubleClick1StatusLeft run "tmux choose-window -Z"; 
 # bind-key -n DoubleClick1StatusRight choose-session -Z -F '#W # '
-# bind-key -n DoubleClick1StatusRight last-window        # move to last active window
+# bind-key -n DoubleClick1StatusRight last-window  # move to last active window
 
 # Double click on the window list to open a new window
 bind-key -n DoubleClick1Status new-window
@@ -242,7 +243,6 @@ if '[ -f ~/.tmux.conf.1 ]' 'source ~/.tmux.conf.1'
 # -- 8< ------------------------------------------------------------------------
 run 'cut -c3- ~/.tmux.conf.leon2 | sh -s _apply_configuration'
 run -b '[ -z "#{window_active}" ] && [ -z "#{version}" ] && tmux set display-time 3000 \; display "This configuration will soon require tmux >= 2.4" \; set -u display-time || true'
-
 run "tmux source-file ~/.tmux.conf.local.leon2"
 
 # EOF
