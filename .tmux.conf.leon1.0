@@ -9,4 +9,3 @@ set status-right-style 'fg=5 bg=#444444'
 set status-style 'fg=5 bg=#444444'
 set window-status-activity-style 'fg=2 bg=#444444'
 set window-status-last-style 'fg=6 bg=#444444'
-

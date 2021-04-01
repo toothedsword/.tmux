@@ -32,8 +32,12 @@ if (-e $file) {
     system("echo '' > /home/leon/.tmux/src/pane_finish");
     my $info = `tmux -L $t capture-pane -t $p -pS -32768`;
     $info =~ s/\n/\|/g;
-    if ($info =~ /\|__[\|]*$/) {
+    $info =~ s/\|[^\|]+\sWindows\:\s[^\|]+/\|/;
+    # system("echo '$info' > /home/leon/info");
+    if ($info =~ /\|[\<\_\#]{2}[\|]*$/) {
         # system("rm -rf $file");
+        print("$t$p🏷️ ");
+    } elsif ($info =~ /\[[^\[\]\|]\]\$\s*\|*\s*$/) {
         print("$t$p🏷️ ");
     } else {
         print("$t$p");
