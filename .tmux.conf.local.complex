@@ -1,4 +1,4 @@
-#  https://github.com/gpakosz/.tmux
+# https://github.com/gpakosz/.tmux
 # (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
@@ -125,8 +125,8 @@ tmux_conf_theme_window_status_format='¶#I #W#{?window_bell_flag,🔔,}#{?window
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_current_fg='#ffffff'      # black
-tmux_conf_theme_window_status_current_bg='#666666'      # light blue 🔍︎
-tmux_conf_theme_window_status_current_attr='bold'
+tmux_conf_theme_window_status_current_bg='#000000'      # light blue 🔍︎
+tmux_conf_theme_window_status_current_attr='underline'
 #tmux_conf_theme_window_status_current_format='#I #W'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
@@ -204,7 +204,9 @@ tmux_conf_theme_status_left='#[fg=1] 🏠 #{username}, ❒ ^A #[fg=2] Windows:'
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_vbar,#{battery_vbar},} #(perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) 📅 %b%d 🕘 %R #(tail ~/src/weather/wttr.out2; sleep 5) #(perl .tmux.1.pl; sleep 1) '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root}#{?battery_status,#{battery_status},}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) 📅#{?#{==:#{username},root},#[fg=red],}%b%d 🕘%R #(tail ~/.tmux/weather/wttr.out2; sleep 500) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3)#{loadavg}#[inherit]'
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} ᚠ #(cd #{pane_current_path};git branch|head -n1;sleep 1) #(cd #{pane_current_path}; timeout 2 git status -s 2>&1|head -n1| sed "s/repository.*/repository/"; sleep 1) #(perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} ᚠ #(cd #{pane_current_path};timeout 2 git branch|head -n1;sleep 1) #(cd #{pane_current_path};timeout 2 ~/.tmux/src/githead;sleep 1) #(cd #{pane_current_path}; timeout 2 perl ~/.tmux/src/gitstatus1.pl; sleep 1)  #(timeout 2 perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; timeout 2 perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} ᚠ #(cd #{pane_current_path};timeout 2 git branch|head -n1;sleep 1) #(cd #{pane_current_path};timeout 2 ~/.tmux/src/githead;sleep 1) #(cd #{pane_current_path}; timeout 2 perl ~/.tmux/src/gitstatus1.pl; sleep 1)  #(timeout 2 perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; timeout 2 perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} #(timeout 2 perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; timeout 2 perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root}'
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} ᚠ #(cd #{pane_current_path};timeout 2 git branch|head -n1;sleep 1) #(cd #{pane_current_path};timeout 2 ~/.tmux/src/githead;sleep 1) #(cd #{pane_current_path}; timeout 2 ~/.tmux/src/gitstatus; sleep 1)  #(timeout 2 perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; timeout 2 perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} ᚠ #(cd #{pane_current_path};timeout 2 git branch|head -n1;sleep 1) #(cd #{pane_current_path};timeout 2 ~/.tmux/src/githead;sleep 1) #(cd #{pane_current_path}; timeout 2 gitstatus; sleep 1)  #(timeout 2 perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; timeout 2 perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
 # tmux_conf_theme_status_right='#(perl /home/leon/.tmux/src/git.pl #{pane_current_path}; sleep 1) #(cd #{pane_current_path}; git status -s; sleep 1) #{prefix}#{pairing}#{synchronized}#{root} #(perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
@@ -360,7 +362,7 @@ tmux_conf_update_plugins_on_reload=true
 set pane-border-style 'fg=5 bg=default'
 set pane-active-border-style 'fg=4 bg=default'
 set window-style 'bg=default fg=5'
-set window-active-style 'fg=4 bg=default'
+set window-active-style 'fg=4 bg=0'
 set window-status-style 'bg=default fg=5'
 set status-left-style 'bg=default fg=5'
 set status-right-style 'bg=default fg=5'
