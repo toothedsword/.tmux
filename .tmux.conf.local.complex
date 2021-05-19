@@ -1,4 +1,4 @@
-# https://github.com/gpakosz/.tmux
+#  https://github.com/gpakosz/.tmux
 # (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
@@ -54,7 +54,7 @@ tmux_conf_theme_highlight_focused_pane=true
 
 # focused pane colours:
 tmux_conf_theme_focused_pane_fg='#00ff00'
-tmux_conf_theme_focused_pane_bg='default'               # light blue
+tmux_conf_theme_focused_pane_bg='#000000'               # light blue
 
 # pane border style, possible values are:
 #   - thin (default)
@@ -76,7 +76,7 @@ tmux_conf_theme_message_bg='#ffffff'                    # yellow
 tmux_conf_theme_message_attr='none'
 
 # status line command style (<prefix> : Escape)
-tmux_conf_theme_message_command_fg='#0000ff'            # yellow
+tmux_conf_theme_message_command_fg='#ffffff'            # yellow
 tmux_conf_theme_message_command_bg='default'            # black
 tmux_conf_theme_message_command_attr='none'
 
@@ -111,10 +111,10 @@ tmux_conf_theme_terminal_title='#h ❐ #S ● #I #W'
 tmux_conf_theme_window_status_fg='#8a8a8a'              # light gray
 tmux_conf_theme_window_status_bg='default'              # dark gray
 tmux_conf_theme_window_status_attr='none'
-#tmux_conf_theme_window_status_format='#I #W'
-#tmux_conf_theme_window_status_format='#{circled_window_index} #W'
-# tmux_conf_theme_window_status_format='#(perl ~/.tmux/src/cc2.pl #I) #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🧷,}'
+# tmux_conf_theme_window_status_format='#(perl /home/leon/.tmux/src/cc.pl #I)#W'
 tmux_conf_theme_window_status_format='¶#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}'
+# tmux_conf_theme_window_status_format='#{circled_window_index} #W'
+# tmux_conf_theme_window_status_format='#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🧷,}'
 
 # window current status style
 #   - built-in variables are:
@@ -125,16 +125,15 @@ tmux_conf_theme_window_status_format='¶#I #W#{?window_bell_flag,🔔,}#{?window
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_current_fg='#ffffff'      # black
-tmux_conf_theme_window_status_current_bg='#000000'      # light blue 🔍︎
-tmux_conf_theme_window_status_current_attr='underline'
+tmux_conf_theme_window_status_current_bg='#000000'      # light blue
+tmux_conf_theme_window_status_current_attr='underscore, bold'
 #tmux_conf_theme_window_status_current_format='#I #W'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
-#tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}' # 🏷️" 
-# setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#(perl ~/.tmux/src/cc2.pl #I) #W#{?window_zoomed_flag,🔍,}#(perl /home/leon/bin/git.pl #{pane_current_path}|sed "s/🎈//" ;) '
-# setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#(perl ~/.tmux/src/cc2.pl #I) #W#{?window_zoomed_flag,🔍,} '
+# tmux_conf_theme_window_status_current_format='#(perl /home/leon/.tmux/src/cc1.pl #I) #W#{?window_zoomed_flag,🔍,}' 
+# setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#I #W#{?window_zoomed_flag,🔍,}#(perl /home/leon/bin/git.pl #{pane_current_path}|sed "s/🎈/🏷️/" ;) '
+#setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#I #W#{?window_zoomed_flag,🧷,}'
 setw -g window-status-current-format ' #{?pane_synchronized,🔗,}¶#I #W#{?window_zoomed_flag,🔍,} '
-# setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#I #W#{?window_zoomed_flag,🧷,}'
 
 # window activity status style
 tmux_conf_theme_window_status_activity_fg='#ff8800'
@@ -142,7 +141,7 @@ tmux_conf_theme_window_status_activity_bg='default'
 tmux_conf_theme_window_status_activity_attr='none'
 
 # window bell status style
-tmux_conf_theme_window_status_bell_fg='#0055ff'         # yellow
+tmux_conf_theme_window_status_bell_fg='#ffffff'         # yellow
 tmux_conf_theme_window_status_bell_bg='default'
 tmux_conf_theme_window_status_bell_attr='none' # blink
 
@@ -189,29 +188,23 @@ tmux_conf_theme_right_separator_sub=''
 # 
 # tmux_conf_theme_status_left='⛪ #S ⚓ #{?uptime_y, #{uptime_y}y,}#{?uptime_d,#{uptime_d}d,}#{?uptime_h,#{uptime_h}h,}#{?uptime_m,#{uptime_m}m,} 🎲'
 # tmux_conf_theme_status_left=' 🏠 #{username} 🎲' #💻
-# tmux_conf_theme_status_left=' ⚓ #{username} 👣' #💻
-# tmux_conf_theme_status_left='#[fg=1] USER:#{username},  ^A #[fg=2] WINDOW:'
+# tmux_conf_theme_status_left=' ⚓ #{username} 👣' #
+# tmux_conf_theme_status_left=' 💻 LocalHost  \U1F5C7  ^D        '
 tmux_conf_theme_status_left='#[fg=1] 🏠 #{username}, ❒ ^A #[fg=2] Windows:'
 # tmux_conf_theme_status_left=' 🎨 #{username} 🎲' 
 # tmux_conf_theme_status_left=' 🏠 #{username} 💻'
-# tmux_conf_theme_status_left=' 🏠 #{username} 🧱'
+# tmux_conf_theme_status_left=' #(cd ~/.tmux/weather; perl wttri1.pl > /dev/null 2>&1; tail wttr.out1; sleep 5) 🧱'
 # tmux_conf_theme_status_left=' 🧱'
 
 # tmux_conf_theme_status_left='↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
 # tmux_conf_theme_status_left=''
-#tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar,#{battery_bar},}#{?battery_percentage, #{battery_percentage},} , 📅 %R ,⌚ %d %b 💻 #{username}#{root}@#{hostname}'
-# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar,#{battery_bar},}#(perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) 📅 %b%d日 🕘 %R #(tail ~/src/weather/wttr.out2; sleep 5) #(perl .tmux.1.pl; sleep 1) '
-# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_vbar,#{battery_vbar},} #(perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) 📅 %b%d 🕘 %R #(tail ~/src/weather/wttr.out2; sleep 5) #(perl .tmux.1.pl; sleep 1) '
-# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root}#{?battery_status,#{battery_status},}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) 📅#{?#{==:#{username},root},#[fg=red],}%b%d 🕘%R #(tail ~/.tmux/weather/wttr.out2; sleep 500) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3)#{loadavg}#[inherit]'
-# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} ᚠ #(cd #{pane_current_path};git branch|head -n1;sleep 1) #(cd #{pane_current_path}; timeout 2 git status -s 2>&1|head -n1| sed "s/repository.*/repository/"; sleep 1) #(perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
-# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} ᚠ #(cd #{pane_current_path};timeout 2 git branch|head -n1;sleep 1) #(cd #{pane_current_path};timeout 2 ~/.tmux/src/githead;sleep 1) #(cd #{pane_current_path}; timeout 2 perl ~/.tmux/src/gitstatus1.pl; sleep 1)  #(timeout 2 perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; timeout 2 perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
-# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} #(timeout 2 perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; timeout 2 perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root}'
-# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} ᚠ #(cd #{pane_current_path};timeout 2 git branch|head -n1;sleep 1) #(cd #{pane_current_path};timeout 2 ~/.tmux/src/githead;sleep 1) #(cd #{pane_current_path}; timeout 2 ~/.tmux/src/gitstatus; sleep 1)  #(timeout 2 perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; timeout 2 perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
-# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root} ᚠ #(cd #{pane_current_path};timeout 2 git branch|head -n1;sleep 1) #(cd #{pane_current_path};timeout 2 ~/.tmux/src/githead;sleep 1) #(cd #{pane_current_path}; timeout 2 gitstatus; sleep 1)  #(timeout 2 perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; timeout 2 perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
-# tmux_conf_theme_status_right='#(perl /home/leon/.tmux/src/git.pl #{pane_current_path}; sleep 1) #(cd #{pane_current_path}; git status -s; sleep 1) #{prefix}#{pairing}#{synchronized}#{root} #(perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
-# tmux_conf_theme_status_right='#(cd #{pane_current_path}; git status -s; sleep 1) #{prefix}#{pairing}#{synchronized}#{root} #(perl /home/leon/.tmux/src/ip.pl) #(cd ~/.tmux; perl .tmux.1.pl 2>/dev/null ; sleep 3) #{loadavg}#[inherit] '
-# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},} 📅 %b%d 🕘 %R #(cd ~; perl .tmux.1.pl 2>/dev/null ; sleep 1) '
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_percentage,#{battery_percentage},}, 📅 %R, ⌚%d%b 💻#{username}#{root}@#{hostname}'
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{battery_percentage}, 📅 %b%d日 🕘 %R '
+# tmux_conf_theme_status_right='     '
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(perl /home/leon/.tmux/src/ip.pl) #{?battery_status,#{battery_status},} #(perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) #(cd ~/.tmux/weather; tail wttr.out2; sleep 5) #(cd ~/.tmux/weather; perl wttri1.pl > /dev/null 2>&1; tail ~/.tmux/weather/wttr.out1; sleep 5)#(perl .tmux.1.pl; sleep 1) '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(perl /home/leon/.tmux/src/ip.pl) '
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root}#{?battery_status,#{battery_status},}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) 📅#{?#{==:#{username},root},#[fg=red],}%b%d 🕘%R '
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},} 📅 %b%d 🕘 %R #(cd ~; perl .tmux.2.pl 2>/dev/null ; sleep 1) '
 # #(echo `tail ~/test`)'
 #tmux_conf_theme_status_right='#{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b'
 # 
@@ -362,16 +355,29 @@ tmux_conf_update_plugins_on_reload=true
 set pane-border-style 'fg=5 bg=default'
 set pane-active-border-style 'fg=4 bg=default'
 set window-style 'bg=default fg=5'
-set window-active-style 'fg=4 bg=0'
-set window-status-style 'bg=default fg=5'
+set window-active-style 'fg=4 bg=#000000'
 set status-left-style 'bg=default fg=5'
 set status-right-style 'bg=default fg=5'
-set status-style 'bg=default fg=4'
-set window-status-activity-style 'bg=default fg=5'
-set window-status-last-style 'bg=default fg=4'
-set-option -g status-position bottom
+set status-style 'bg=default fg=5'
+set window-status-style 'bg=default fg=7'
+set window-status-activity-style 'bg=default fg=#ffffff'
+set window-status-bell-style 'bg=default fg=7'
+set window-status-last-style 'bg=default fg=7'
 set-option -g status-justify left
+set-option -g status-position bottom
 
+#set pane-border-style 'fg=5 bg=default'
+#set pane-active-border-style 'fg=4 bg=default'
+#set window-style 'bg=default fg=5'
+#set window-active-style 'fg=4 bg=default'
+#set window-status-style 'bg=default fg=5'
+#set status-left-style 'bg=7 fg=5'
+#set status-right-style 'bg=7 fg=5'
+#set status-style 'bg=7 fg=5'
+#set window-status-activity-style 'bg=default fg=2'
+#set window-status-last-style 'bg=7 fg=5'
+#set-option -g status-justify centre
+#set-option -g status-position top
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
