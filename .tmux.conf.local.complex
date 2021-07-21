@@ -376,8 +376,8 @@ set-option -g status-position bottom
 #set status-style 'bg=7 fg=5'
 #set window-status-activity-style 'bg=default fg=2'
 #set window-status-last-style 'bg=7 fg=5'
-#set-option -g status-justify centre
-#set-option -g status-position top
+# set-option -g status-justify centre
+# set-option -g status-position top
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
