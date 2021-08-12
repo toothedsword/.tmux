@@ -23,14 +23,23 @@ use warnings;
 use utf8;
 # system("gnome-screenshot");
 
-my $ifig = `cd ~/ && ls -rt | grep Screenshot | tail -n1`;
-chomp($ifig);
-my $ofig = $ifig;
-$ofig =~ s/Screen.*from\s*//;
-$ofig =~ s/\s/-/g;
-$ofig = "/home/leon/doc/note/fig/$ofig";
+my $ifig = `cd ~/Pictures/ && ls -rt | tail -n1`;
 
-system("cp ~/'$ifig' $ofig");
+chomp($ifig);
+my $ofig0 = $ifig;
+$ofig0 =~ s/Screen.*from\s*//;
+$ofig0 =~ s/\s/-/g;
+my $ofig = "/home/leon/note_solid/fig/$ofig0";
+
+if (-e $ofig) {
+	my ($sec,$min,$hour,$mday,$mon,$year) = localtime();
+	$year = $year+1900;
+	$mon ++; 
+	my $time = "$year-$mon-${mday}_$hour-$min-$sec";
+	$ofig = "/home/leon/note_solid/fig/$time.$ofig0";
+}
+
+system("cp ~/Pictures/'$ifig' $ofig");
 # system("echo 'viewnior $ofig' > ~/1.txt");
 # system("xclip -o -sel clip ~/1.txt");
 # system("echo test | xclip -sel clip");

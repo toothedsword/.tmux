@@ -126,7 +126,7 @@ tmux_conf_theme_window_status_format='¶#I #W#{?window_bell_flag,🔔,}#{?window
 #     - #{username_ssh}
 tmux_conf_theme_window_status_current_fg='#ffffff'      # black
 tmux_conf_theme_window_status_current_bg='default'      # light blue
-tmux_conf_theme_window_status_current_attr='underscore, bold'
+tmux_conf_theme_window_status_current_attr='underscore' #, bold'
 #tmux_conf_theme_window_status_current_format='#I #W'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
@@ -190,13 +190,13 @@ tmux_conf_theme_right_separator_sub=''
 # tmux_conf_theme_status_left=' 🏠 #{username} 🎲' #💻
 # tmux_conf_theme_status_left=' ⚓ #{username} 👣' #
 # tmux_conf_theme_status_left=' 💻 LocalHost  \U1F5C7  ^D        '
-tmux_conf_theme_status_left='#[fg=1] 🏠 #{username}, ❒ ^A #[fg=2] Windows:'
+tmux_conf_theme_status_left='#[fg=1] #{username}@,  ❒ ^A #[fg=2] Windows:'
 # tmux_conf_theme_status_left=' 🎨 #{username} 🎲' 
 # tmux_conf_theme_status_left=' 🏠 #{username} 💻'
 # tmux_conf_theme_status_left=' #(cd ~/.tmux/weather; perl wttri1.pl > /dev/null 2>&1; tail wttr.out1; sleep 5) 🧱'
 # tmux_conf_theme_status_left=' 🧱'
 
-# tmux_conf_theme_status_left='↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
+# tmux_conf_theme_status_left=' ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
 # tmux_conf_theme_status_left=''
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_percentage,#{battery_percentage},}, 📅 %R, ⌚%d%b 💻#{username}#{root}@#{hostname}'
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{battery_percentage}, 📅 %b%d日 🕘 %R '
@@ -353,7 +353,7 @@ tmux_conf_update_plugins_on_reload=true
 #set -g @continuum-restore 'on'
 
 set pane-border-style 'fg=5 bg=default'
-set pane-active-border-style 'fg=4 bg=default'
+set pane-active-border-style 'fg=#ff0000 bg=default'
 set window-style 'bg=default fg=5'
 set window-active-style 'fg=#00ff00 bg=default'
 set status-left-style 'bg=default fg=5'
