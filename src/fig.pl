@@ -23,24 +23,36 @@ use warnings;
 use utf8;
 # system("gnome-screenshot");
 
-my $ifig = `cd ~/Pictures/ && ls -rt | tail -n1`;
+my $ifig = `cd ~/Pictures/ && ls -rt *.png *.jpg *.jpeg *.tiff *.tif *.PNG *.JPG *.JPEG *.TIFF *.TIF | tail -n1`;
 
 chomp($ifig);
-my $ofig0 = $ifig;
-$ofig0 =~ s/Screen.*from\s*//;
-$ofig0 =~ s/\s/-/g;
-my $ofig = "/home/leon/note_solid/fig/$ofig0";
 
-if (-e $ofig) {
-	my ($sec,$min,$hour,$mday,$mon,$year) = localtime();
-	$year = $year+1900;
-	$mon ++; 
-	my $time = "$year-$mon-${mday}_$hour-$min-$sec";
-	$ofig = "/home/leon/note_solid/fig/$time.$ofig0";
+print("viewnior ~/Pictures/'$ifig'");
+
+if (0) {
+	my $date = `date`;
+	my $tmp = "/home/leon/.tmux/src/.fig.out.tmp";
+	open(OUT, ">>$tmp");
+	print OUT $date;
+	close(OUT);
+
+	my $ofig0 = $ifig;
+	$ofig0 =~ s/Screen.*from\s*//;
+	$ofig0 =~ s/\s/-/g;
+	my $ofig = "/home/leon/note_solid/fig/$ofig0";
+	$ofig =~ s/[\(\)]//;
+
+	if (-e $ofig) {
+		my ($sec,$min,$hour,$mday,$mon,$year) = localtime();
+		$year = $year+1900;
+		$mon ++; 
+		my $time = "$year-$mon-${mday}_$hour-$min-$sec";
+		$ofig = "/home/leon/note_solid/fig/$time.$ofig0";
+	}
+
+	system("cp ~/Pictures/'$ifig' $ofig");
+    # system("echo 'viewnior $ofig' > ~/1.txt");
+    # system("xclip -o -sel clip ~/1.txt");
+    # system("echo test | xclip -sel clip");
+	print("viewnior $ofig");
 }
-
-system("cp ~/Pictures/'$ifig' $ofig");
-# system("echo 'viewnior $ofig' > ~/1.txt");
-# system("xclip -o -sel clip ~/1.txt");
-# system("echo test | xclip -sel clip");
-print("viewnior $ofig");
