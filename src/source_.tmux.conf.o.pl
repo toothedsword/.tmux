@@ -34,5 +34,3 @@ if (-e <\~/.tmux/.tmux.conf.$n>) {
 }
 `ln -sf $file ~/.tmux/.tmux.conf.o`;
 `tmux source-file ~/.tmux/.tmux.conf.o`;
-
-
