@@ -358,7 +358,7 @@ set -g @plugin 'christoomey/vim-tmux-navigator'
 run '~/.tmux/plugins/tpm/tpm'
 
 set pane-border-style 'fg=5 bg=default'
-set pane-active-border-style 'fg=#ff0000 bg=default'
+set pane-active-border-style 'fg=#00ff00 bg=default'
 set window-style 'bg=default fg=5'
 set window-active-style 'fg=#00ff00 bg=default'
 set status-left-style 'bg=default fg=5'
