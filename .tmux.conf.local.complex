@@ -44,7 +44,7 @@ tmux_conf_new_session_prompt=false
 tmux_conf_theme_24b_colour=false
 
 # window style
-tmux_conf_theme_window_fg='default'
+tmux_conf_theme_window_fg='#999999'
 tmux_conf_theme_window_bg='default'
 
 # highlight focused pane (tmux >= 2.1), possible values are:
@@ -130,7 +130,7 @@ tmux_conf_theme_window_status_current_attr='underscore' #, bold'
 #tmux_conf_theme_window_status_current_format='#I #W'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
-# tmux_conf_theme_window_status_current_format='#(perl /home/leon/.tmux/src/cc1.pl #I) #W#{?window_zoomed_flag,🔍,}' 
+tmux_conf_theme_window_status_current_format='¶#I #W#{?window_zoomed_flag,🔍,}' 
 # setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#I #W#{?window_zoomed_flag,🔍,}#(perl /home/leon/bin/git.pl #{pane_current_path}|sed "s/🎈/🏷️/" ;) '
 #setw -g window-status-current-format ' #{?pane_synchronized,🔗,}#I #W#{?window_zoomed_flag,🧷,}'
 # setw -g window-status-current-format ' #{?pane_synchronized,🔗,}¶#I #W#{?window_zoomed_flag,🔍,} '
@@ -190,7 +190,7 @@ tmux_conf_theme_right_separator_sub=''
 # tmux_conf_theme_status_left=' 🏠 #{username} 🎲' #💻
 # tmux_conf_theme_status_left=' ⚓ #{username} 👣' #
 # tmux_conf_theme_status_left=' 💻 LocalHost  \U1F5C7  ^D        '
-tmux_conf_theme_status_left=' *tasks #[fg=1] #{username}@,   ❒ ^A #[fg=2]   Windows:'
+tmux_conf_theme_status_left='#[fg="#999999"] *tasks #{username}@,   ❒ ^A    #[fg="#999999"]Windows:'
 # tmux_conf_theme_status_left=' 🎨 #{username} 🎲' 
 # tmux_conf_theme_status_left=' 🏠 #{username} 💻'
 # tmux_conf_theme_status_left=' #(cd ~/.tmux/weather; perl wttri1.pl > /dev/null 2>&1; tail wttr.out1; sleep 5) 🧱'
@@ -357,17 +357,28 @@ tmux_conf_update_plugins_on_reload=true
 set -g @plugin 'christoomey/vim-tmux-navigator'
 run '~/.tmux/plugins/tpm/tpm'
 
-set pane-border-style 'fg=5 bg=default'
+# set pane-border-style 'fg=5 bg=default'
+# set pane-active-border-style 'fg=#00ff00 bg=default'
+# set window-style 'bg=default fg=5'
+# set window-active-style 'fg=#00ff00 bg=default'
+# set status-left-style 'bg=default fg=5'
+# set status-right-style 'bg=default fg=5'
+# set status-style 'bg=default fg=5'
+# set window-status-style 'bg=default fg=7'
+# set window-status-activity-style 'bg=default fg=#ffffff'
+# set window-status-bell-style 'bg=default fg=7'
+# set window-status-last-style 'bg=default fg=7'
+set pane-border-style 'fg=#999999 bg=default'
 set pane-active-border-style 'fg=#00ff00 bg=default'
-set window-style 'bg=default fg=5'
+set window-style 'bg=default fg=#999999'
 set window-active-style 'fg=#00ff00 bg=default'
-set status-left-style 'bg=default fg=5'
-set status-right-style 'bg=default fg=5'
-set status-style 'bg=default fg=5'
-set window-status-style 'bg=default fg=7'
-set window-status-activity-style 'bg=default fg=#ffffff'
-set window-status-bell-style 'bg=default fg=7'
-set window-status-last-style 'bg=default fg=7'
+set window-status-style 'bg=default fg=#00ff00'
+set status-left-style 'bg=default fg=#00ff00'
+set status-right-style 'bg=default fg=#00ff00'
+set status-style 'bg=default fg=#00ff00'
+set window-status-activity-style 'bg=default fg=#00ff00'
+set window-status-last-style 'bg=default fg=#ff0000'
+
 set-option -g status-justify left
 set-option -g status-position bottom
 

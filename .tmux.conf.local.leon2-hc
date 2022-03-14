@@ -184,7 +184,7 @@ tmux_conf_theme_right_separator_sub=''
 #     - #{username}
 #     - #{username_ssh}
 # 
-tmux_conf_theme_status_left=' +servers  ^ %b%d   \%R   \U1F5CD  ^Q '
+tmux_conf_theme_status_left=' +servers  ^ %b%d   \%R   \U1F5CD  ^Q  Servers: '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(perl /home/leon/.tmux/src/ip.pl; sleep 60)'
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(curl -s wttr.in/Beijing\?format\="%%l:+%%C%%20%%t%%60%%w&period=600") '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}'

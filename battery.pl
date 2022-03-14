@@ -22,5 +22,5 @@ use strict;
 use warnings;
 use utf8;
 
-my $re = `(upower -i /org/freedesktop/UPower/devices/battery_BAT0;upower -i /org/freedesktop/UPower/devices/battery_BAT1)|grep percentage|sed "s/percentage://"|tr "\n" " "|sed "s/ //g"|sed "s/%/+/"|sed "s/%//"`;
+my $re = `(upower -i /org/freedesktop/UPower/devices/battery_BAT0; upower -i /org/freedesktop/UPower/devices/battery_BAT1)|grep percentage|sed "s/percentage://"|tr "\n" " "|sed "s/ //g"|sed "s/%/+/"|sed "s/%//"`;
 print $re;

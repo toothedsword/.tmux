@@ -185,7 +185,7 @@ tmux_conf_theme_right_separator_sub=''
 #     - #{username_ssh}
 # 
 
-tmux_conf_theme_status_left=' -missions  ↑#{?uptime_y,#{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,}   \U1F5C7  ^D  '
+tmux_conf_theme_status_left=' -missions  ↑#{?uptime_y,#{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,}   \U1F5C7  ^D  Missions: '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(perl /home/leon/.tmux/src/ip.pl) '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(curl wttr.in/Beijing\?format\="%%C" sleep 600)'
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(curl -s wttr.in/Beijing\?format\="%%l:+%%C%%20%%t%%60%%w&period=60")'

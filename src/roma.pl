@@ -20,6 +20,6 @@
 
 $i = shift;
 
-(@n) = '|O|Server: I|II|III|IV|V|VI|VII|VIII|IX|X|' =~ /([^|]+)/g;
+(@n) = '|O|I|II|III|IV|V|VI|VII|VIII|IX|X|' =~ /([^|]+)/g;
 
 print $n[$i];
