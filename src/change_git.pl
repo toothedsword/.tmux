@@ -22,11 +22,10 @@ use strict;
 use warnings;
 use utf8;
 
-my $rt = `cat ~/bin/git.pl | grep Description`;
+my $rt = `cat ~/bin/git.pl  | grep Description`;
 
 if ($rt =~ /simple_style_git/) {
     `ln -sf ~/.tmux/src/git.pl ~/bin/git.pl`;
 } else {
     `ln -sf ~/.tmux/src/git_sp.pl ~/bin/git.pl`;
 }
-

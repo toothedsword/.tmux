@@ -85,6 +85,7 @@ bind p paste-buffer
 # create session
 bind C-c new-session
 bind C-q last-window        # move to last active window
+bind C-b last-window        # move to last active window
 
 # find session
 bind C-f command-prompt -p find-session 'switch-client -t %%'
@@ -228,7 +229,7 @@ bind-key -n DoubleClick1Border run "perl ~/.tmux/src/syn.pl #{pane_synchronized}
 unbind-key -n M-DoubleClick1Pane
 
 bind u run "perl ~/.tmux/src/change_git.pl"
-bind C-b run "perl ~/.bash/change.pl"
+# bind C-b run "perl ~/.bash/change.pl"
 bind t run "perl ~/.tmux/src/test.pl #{window_zoomed_flag}"
 
 # unbind-key MouseDown1Pane

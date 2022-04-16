@@ -29,5 +29,6 @@ if ($m) {
     system("tmux source ~/.tmux.conf.1");
 } else {
     system("tmux set pane-border-style 'fg=#ff0000 bg=default'");
-    system("tmux set window-style 'bg=default fg=#ff8800'");
+    system("tmux set window-style 'bg=default fg=#ff0000'");
+    system("tmux set window-active-style 'bg=default fg=#ff0000'");
 }
