@@ -1,0 +1,66 @@
+#!/usr/bin/env perl
+# /**---------------------------------------------------------------------------
+#
+#         File: check.pl
+#
+#        Usage: ./check.pl  
+#
+#  Description: 
+#
+#      Options: ---
+# Requirements: ---
+#         Bugs: ---
+#        Notes: ---
+#       Author: Liang Peng (...), pengliang@piesat
+# Organization: ...
+#      Version: 1.0
+#      Created: 2021年03月22日 17时46分56秒
+#     Revision: ---
+# ----------------------------------------------------------------------------*/
+
+use strict;
+use warnings;
+use utf8;
+
+my $cmd = "\\|";
+if ($cmd =~ /^\s*grep\s*/) {
+    # print('-------\n');
+} else {
+    $cmd = "grep $cmd";
+}
+
+foreach my $L (qw(leon2 leon1 leon)) { 
+    my $s = `tmux -L $L list-sessions`;
+    $s =~ s/\n/|/g;
+    my (@sns) = "|$s" =~ /\|\s*(\d+)\s*\:/g;
+
+    my $wd;
+    for my $sn (@sns) {
+        my $w = `tmux -L $L list-windows -t $sn`;
+        $w =~ s/\n/|/g;
+        my (@wns) = "|$w" =~ /\|\s*(\d+)\s*\:/g;
+        for my $wn (@wns) {
+
+            my $p = `tmux -L $L list-panes -t $sn:$wn`;
+            $p =~ s/\n/|/g;
+            my (@pns) = "|$p" =~ /\|\s*(\d+)\s*\:/g;
+
+            for my $pn (@pns) {
+                # print("$sn:$wn.$pn\n");
+                my $info = `tmux -L $L capture-pane -t $sn:$wn.$pn -pS -32768 | $cmd | tail -n1`;
+                if (defined($info)) {
+                    my ($info2) = $info =~ /\<\|(.*)\|\>/;
+                    if (defined($info2)) {
+                        $info2 =~ s/[^\s\w\d\,\.]+/-/g;
+                        $info2 =~ s/^\s*(.{30}).*$/$1/;
+                        $info2 =~ s/\s*$//;
+                        system("echo $info2 > ~/.tmux/src/nout2") if $info2 =~ /[^\s]/;
+                        # print($info2,"\n");
+                    }
+                }
+            }
+        }
+    }
+}
+
+# system("cat ~/.tmux/src/nout1");
