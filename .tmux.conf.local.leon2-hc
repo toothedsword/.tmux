@@ -189,7 +189,9 @@ tmux_conf_theme_status_left=' +servers  ^ %b%d   \%R   \U1F5CD  ^Q  Servers: '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(curl -s wttr.in/Beijing\?format\="%%l:+%%C%%20%%t%%60%%w&period=600") '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}'
 # # {?battery_status,#{battery_status},}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #{?battery_status,#{battery_status},}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) '
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #{?battery_status,#{battery_status},#{battery_bar}}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #{?battery_status,#{battery_status},}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) #{battery_bar} '
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #{?battery_status,#{battery_status}} #(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) #{battery_bar}'
  
 # status left style
 tmux_conf_theme_status_left_fg='#8a8a8a,#8a8a8a,#ff0000'  # black, white , white
@@ -242,7 +244,7 @@ tmux_conf_battery_bar_length=5 #'auto'
 #   - heat
 #   - 'colour_full_fg,colour_empty_fg,colour_bg'
 # tmux_conf_battery_bar_palette='heat'
-tmux_conf_battery_bar_palette='#00ff88,#ff8800,#8800ff'   # red, white, black
+tmux_conf_battery_bar_palette='#00ff00,#ff0000,default'   # red, white, black
 # tmux_conf_battery_bar_palette='colour_full_fg,colour_empty_fg,colour_bg'
  
 # battery hbar palette, possible values are:
