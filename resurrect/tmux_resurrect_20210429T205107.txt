@@ -1,0 +1,70 @@
+pane	0	1	:vi	0	:#	1	:/home/leon/ads	1	vi	:vi coms.m
+pane	0	1	:vi	0	:#	2	:/home/leon/ads	0	bash	:
+pane	0	1	:vi	0	:#	3	:/home/leon/ads	0	bash	:
+pane	0	2	:bash	0	:	1	:/home/leon/note_solid	0	vi	:vi note_solid/note.md
+pane	0	2	:bash	0	:	2	:/home/leon/note_solid	1	bash	:
+pane	0	2	:bash	0	:	3	:/home/leon/note_solid	0	bash	:
+pane	0	3	:bash	0	:	1	:/home/leon/src/light	0	vi	:vi test5.py
+pane	0	3	:bash	0	:	2	:/home/leon/src/light	0	bash	:
+pane	0	3	:bash	0	:	3	:/home/leon/src/light	1	bash	:
+pane	0	4	:bash	0	:	1	:/home/leon/tmp	0	bash	:
+pane	0	4	:bash	0	:	2	:/media/leon/test/doc/Downloads	1	bash	:
+pane	0	5	:vi	0	:#	1	:/home/leon/ads	1	vi	:vi qpe.m
+pane	0	5	:vi	0	:#	2	:/home/leon/ads	0	bash	:/usr/bin/bash /home/leon/bin/ml
+pane	0	5	:vi	0	:#	3	:/home/leon/ads	0	bash	:
+pane	0	6	:bash	0	:	1	:/home/leon/tmp/ADS验收文档-2020-04-27/产品精度报告-张晗-吕梦霞-彭亮	1	bash	:
+pane	0	7	:vi	0	:#	1	:/media/leon/test/1043/20201218/qcs/SPS_TCM	1	vi	:vi tcm_zj.py
+pane	0	8	:vi	0	:#	1	:/media/leon/test/ADT_test	1	vi	:vi read_fy4_agri.m
+pane	0	8	:vi	0	:#	2	:/home/leon/src/light	0	bash	:
+pane	0	8	:vi	0	:#	3	:/home/leon/src/light	0	bash	:
+pane	0	9	:vi	0	:#	1	:/home/leon/ssi	1	vi	:vi ssi_com.m
+pane	0	9	:vi	0	:#	2	:/media/leon/test/wind	0	bash	:
+pane	0	9	:vi	0	:#	3	:/home/leon/ssi	0	bash	:/usr/bin/bash /home/leon/bin/ml
+pane	0	10	:maximized...[dead]	1	:*	1	:/qixiang/Document/ADS/验收评审-20210429	0	bash	:
+pane	0	10	:maximized...[dead]	1	:*	2	:	1	maximized...	:
+pane	0	11	:bash	0	:-	1	:/home/leon/tmp/ADS验收文档-2020-04-27/试运行0429	1	bash	:/bin/bash /usr/bin/wps 风云?号科研试验卫星地面应用系统工程应用与示范系统(ADS)产品应用软件.试运行报告-气溶胶?测子系统（已校对）.docx
+pane	0	11	:bash	0	:-	2	:/qixiang/Document/ADS/验收评审-20210429/试运行	0	bash	:
+pane	0	11	:bash	0	:-	3	:/qixiang/Document/ADS/验收评审-20210429/试运行	0	bash	:
+pane	1	1	:vi	0	:#	1	:/home/leon/dq2020-001	1	vi	:vi 电离层.md
+pane	1	1	:vi	0	:#	2	:/home/leon/dq2020-001	0	bash	:
+pane	1	1	:vi	0	:#	3	:/media/leon/test/doc/Downloads	0	bash	:
+pane	1	2	:vi	0	:#	1	:/home/leon/dq2020-001	1	vi	:vi require.py
+pane	1	2	:vi	0	:#	2	:/home/leon/dq2020-001/test	0	bash	:
+pane	1	2	:vi	0	:#	3	:/home/leon/dq2020-001/test	0	top	:top
+pane	1	3	:vi	0	:#-	1	:/home/leon/note_solid	1	vi	:vi note.md
+pane	1	4	:bash	1	:*	1	:/media/leon/test/ssi/ssi	1	bash	:
+pane	2	1	:bash	0	:	1	:/home/leon/tmp/ADS验收文档-2020-04-27	1	bash	:
+pane	2	1	:bash	0	:	2	:/home/leon/ads	0	bash	:
+pane	2	1	:bash	0	:	3	:/home/leon/src/light/fig	0	bash	:
+pane	2	2	:bash	0	:	1	:/media/leon/test/doc/Downloads/202011\ (deleted)	1	bash	:
+pane	2	2	:bash	0	:	2	:/home/leon/ssi/202011/20201101	0	bash	:
+pane	2	2	:bash	0	:	3	:/home/leon/ads	0	bash	:
+pane	2	3	:ncdump	0	:	1	:/home/leon/era	1	ncdump	:ncdump prep_20200906.nc
+more
+pane	2	3	:ncdump	0	:	2	:/home/leon/era	0	bash	:
+pane	2	3	:ncdump	0	:	3	:/home/leon/era	0	vi	:vi pre.py
+pane	2	4	:bash	1	:*	1	:/home/leon/ssi	0	vi	:vi ssis.m
+pane	2	4	:bash	1	:*	2	:/media/leon/test/ssi/ssi	1	bash	:/usr/bin/bash /home/leon/bin/ml
+pane	2	4	:bash	1	:*	3	:/media/leon/test/ssi/ssi	0	bash	:
+pane	2	5	:bash	0	:-	1	:/home/leon/ads	1	bash	:
+window	0	1	0	:#	74e6,147x40,0,0[147x32,0,0,0,147x7,0,33{73x7,0,33,1,73x7,74,33,2}]
+window	0	2	0	:	ea46,145x36,0,0[145x27,0,0,3,145x8,0,28{71x8,0,28,28,73x8,72,28,29}]
+window	0	3	0	:	84ef,147x40,0,0[147x32,0,0,4,147x7,0,33{73x7,0,33,5,73x7,74,33,6}]
+window	0	4	0	:	ab83,145x36,0,0[145x18,0,0,7,145x17,0,19,8]
+window	0	5	0	:#	500c,145x36,0,0[145x23,0,0,9,145x12,0,24{72x12,0,24,43,72x12,73,24,44}]
+window	0	6	0	:	622f,145x36,0,0,10
+window	0	7	0	:#	6230,145x36,0,0,11
+window	0	8	0	:#	691d,145x36,0,0[145x31,0,0,14,145x4,0,32{72x4,0,32,22,72x4,73,32,23}]
+window	0	9	0	:#	b592,145x36,0,0[145x24,0,0,45,145x11,0,25{65x11,0,25,47,79x11,66,25,49}]
+window	0	10	1	:*	f3e0,145x36,0,0[145x18,0,0,50,145x17,0,19,52]
+window	0	11	0	:-	d25b,145x36,0,0[145x24,0,0,51,145x11,0,25{72x11,0,25,53,72x11,73,25,54}]
+window	1	1	0	:#	7583,147x40,0,0[147x32,0,0,15,147x7,0,33{73x7,0,33,24,73x7,74,33,25}]
+window	1	2	0	:#	4afd,147x40,0,0[147x29,0,0,16,147x10,0,30{73x10,0,30,17,73x10,74,30,20}]
+window	1	3	0	:#-	d7b0,147x40,0,0,21
+window	1	4	1	:*	e236,145x36,0,0,27
+window	2	1	0	:	0355,145x36,0,0[145x22,0,0,30,145x13,0,23{72x13,0,23,31,72x13,73,23,32}]
+window	2	2	0	:	d27b,145x36,0,0[145x24,0,0,33,145x11,0,25{72x11,0,25,34,72x11,73,25,35}]
+window	2	3	0	:	65eb,145x36,0,0[145x26,0,0,36,145x9,0,27{72x9,0,27,40,72x9,73,27,42}]
+window	2	4	1	:*	1a81,145x36,0,0[145x25,0,0,38,145x10,0,26{72x10,0,26,39,72x10,73,26,37}]
+window	2	5	0	:-	e231,145x36,0,0,41
+state	0	
