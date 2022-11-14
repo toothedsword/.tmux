@@ -190,7 +190,11 @@ tmux_conf_theme_status_left=' +servers  ^ %b%d   \%R   \U1F5CD  ^Q  Servers: '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}'
 # # {?battery_status,#{battery_status},}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #{?battery_status,#{battery_status},#{battery_bar}}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #{?battery_status,#{battery_status},}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) #{battery_bar} '
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #{?battery_status,#{battery_status},}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) #{battery_bar} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) #{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}'
+
+# tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} "
+
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #{?battery_status,#{battery_status}} #(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) #{battery_bar}'
  
 # status left style
@@ -229,37 +233,37 @@ tmux_conf_theme_synchronized_bg='none'
 tmux_conf_theme_synchronized_attr='none'
 
 # battery bar symbols
-tmux_conf_battery_bar_symbol_full='━' #'◼'
-tmux_conf_battery_bar_symbol_empty='━' #'◻'
+tmux_conf_battery_bar_symbol_full='◼' # '▪' # # '━' #'◼' ●○
+tmux_conf_battery_bar_symbol_empty='◻'  # '▫' # '○' # '━' #'◻'
 #tmux_conf_battery_bar_symbol_full='♥'
 #tmux_conf_battery_bar_symbol_empty='·'
 
 # battery bar length (in number of symbols), possible values are:
 #   - auto
 #   - a number, e.g. 5
-tmux_conf_battery_bar_length=5 #'auto'
+tmux_conf_battery_bar_length=7 # "auto" # 5
 
 # battery bar palette, possible values are:
 #   - gradient (default)
 #   - heat
 #   - 'colour_full_fg,colour_empty_fg,colour_bg'
-# tmux_conf_battery_bar_palette='heat'
-tmux_conf_battery_bar_palette='#00ff00,#ff0000,default'   # red, white, black
+tmux_conf_battery_bar_palette='gradient'
+# tmux_conf_battery_bar_palette='#00ff00,#ff0000,default'   # red, white, black
 # tmux_conf_battery_bar_palette='colour_full_fg,colour_empty_fg,colour_bg'
  
 # battery hbar palette, possible values are:
 #   - gradient (default)
 #   - heat
 #   - 'colour_low,colour_half,colour_full'
-#tmux_conf_battery_hbar_palette='gradient'
-tmux_conf_battery_hbar_palette='#d70000,#ff5f00,#5fff00'  # red, orange, green
+tmux_conf_battery_hbar_palette='gradient'
+# tmux_conf_battery_hbar_palette='#d70000,#ff5f00,#5fff00'  # red, orange, green
 
 # battery vbar palette, possible values are:
 #   - gradient (default)
 #   - heat
 #   - 'colour_low,colour_half,colour_full'
 tmux_conf_battery_vbar_palette='gradient'
-tmux_conf_battery_vbar_palette='#d70000,#ff5f00,#5fff00'  # red, orange, green
+# tmux_conf_battery_vbar_palette='#d70000,#ff5f00,#5fff00'  # red, orange, green
 
 # symbols used to indicate whether battery is charging or discharging
 # tmux_conf_battery_status_charging='+'  # '↑'       # U+2191
