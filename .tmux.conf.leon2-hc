@@ -38,7 +38,7 @@ unbind L
 bind L choose-window -Z -F '#W  ->  [#{pane_current_command}]#{pane_current_path}' # "
 
 unbind C-space
-bind C-space choose-window -Z -F '#W  ->  [#{pane_current_command}]#{pane_current_path}' # "
+# bind C-space choose-window -Z -F '#W  ->  [#{pane_current_command}]#{pane_current_path}' # "
 
 # reload configuration
 bind r source-file ~/.tmux.conf.leon1 \; display '~/.tmux.conf.leon1 sourced'
@@ -85,7 +85,7 @@ bind p paste-buffer
 # create session
 bind C-c new-session
 bind C-q last-window        # move to last active window
-bind C-b last-window        # move to last active window
+# bind C-space last-session        # move to last active window
 
 # find session
 bind C-f command-prompt -p find-session 'switch-client -t %%'

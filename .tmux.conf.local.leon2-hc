@@ -191,7 +191,9 @@ tmux_conf_theme_status_left=' +servers  ^ %b%d   \%R   \U1F5CD  ^Q  Servers: '
 # # {?battery_status,#{battery_status},}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #{?battery_status,#{battery_status},#{battery_bar}}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #{?battery_status,#{battery_status},}#(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) #{battery_bar} '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) #{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}'
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(perl /home/leon/.tmux/src/ip.pl) #(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) #{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}'
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(perl /home/leon/.tmux/src/ip.pl) #(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) #{?battery_status,#{battery_status},}'
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(perl /home/leon/.tmux/src/ip.pl) #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #(cd ~; perl .tmux/battery.pl|sed "s/100+100/100%/";sleep 1) #{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}'
 
 # tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} "
 
@@ -268,9 +270,9 @@ tmux_conf_battery_vbar_palette='gradient'
 # symbols used to indicate whether battery is charging or discharging
 # tmux_conf_battery_status_charging='+'  # '↑'       # U+2191
 # tmux_conf_battery_status_discharging='!'  # '↓'    # U+2193
-tmux_conf_battery_status_charging='↑charging ' # # U+26A1
+tmux_conf_battery_status_charging='↑ ' # # U+26A1
 # tmux_conf_battery_status_charging='🔌 '    # U+1F50C
-tmux_conf_battery_status_discharging='!battery ' #  U+1F50B
+tmux_conf_battery_status_discharging='!! ' #  U+1F50B
 
 # clock style (when you hit <prefix> + t)
 # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right

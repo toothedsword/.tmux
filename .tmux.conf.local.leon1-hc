@@ -189,7 +189,8 @@ tmux_conf_theme_status_left=' -missions  ↑#{?uptime_y,#{uptime_y}y,}#{?uptime_
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(perl /home/leon/.tmux/src/ip.pl) '
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(curl wttr.in/Beijing\?format\="%%C" sleep 600)'
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(curl -s wttr.in/Beijing\?format\="%%l:+%%C%%20%%t%%60%%w&period=60")'
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(perl /home/leon/.tmux/src/ip.pl) '
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(perl /home/leon/.tmux/src/ip.pl) '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(free -h | head -n2 | tail -n1 | sed "s/M[^ ]* *//" | sed "s/  */\//" | sed "s/ .*//"; sleep 60) #{battery_status}'
 
 # status left style
 tmux_conf_theme_status_left_fg='#8a8a8a,#8a8a8a,#ff0000'  # black, white , white
@@ -262,9 +263,9 @@ tmux_conf_battery_vbar_palette='#d70000,#ff5f00,#5fff00'  # red, orange, green
 # symbols used to indicate whether battery is charging or discharging
 # tmux_conf_battery_status_charging='+'  # '↑'       # U+2191
 # tmux_conf_battery_status_discharging='!'  # '↓'    # U+2193
-tmux_conf_battery_status_charging='↑charging ' # # U+26A1
+tmux_conf_battery_status_charging='charging ' # # U+26A1
 # tmux_conf_battery_status_charging='🔌 '    # U+1F50C
-tmux_conf_battery_status_discharging='!battery ' #  U+1F50B
+tmux_conf_battery_status_discharging='battery ' #  U+1F50B
 
 # clock style (when you hit <prefix> + t)
 # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
