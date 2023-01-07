@@ -53,7 +53,7 @@ tmux_conf_theme_window_bg='default'
 tmux_conf_theme_highlight_focused_pane=true
 
 # focused pane colours:
-tmux_conf_theme_focused_pane_fg='#00ff32'
+tmux_conf_theme_focused_pane_fg='#cccccc'
 tmux_conf_theme_focused_pane_bg='default'               # light blue
 
 # pane border style, possible values are:
@@ -64,14 +64,14 @@ tmux_conf_theme_pane_border_style=thin
 # pane borders colours:
 # tmux_conf_theme_pane_border='#001111'                   # gray
 tmux_conf_theme_pane_border='#777777'                   # gray
-tmux_conf_theme_pane_active_border='#00ff32'            # light blue
+tmux_conf_theme_pane_active_border='#88ffff'            # light blue
 
 # pane indicator colours
 tmux_conf_theme_pane_indicator='#ff0000'                # light blue
 tmux_conf_theme_pane_active_indicator='#555555'         # light blue
 
 # status line style
-tmux_conf_theme_message_fg='#00ffff'                    # black
+tmux_conf_theme_message_fg='#00ff00'                    # black
 tmux_conf_theme_message_bg='#ffffff'                    # yellow
 tmux_conf_theme_message_attr='none'
 
@@ -355,7 +355,7 @@ tmux_conf_update_plugins_on_reload=true
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
 set -g @plugin 'christoomey/vim-tmux-navigator'
-run '~/.tmux/plugins/tpm/tpm'
+# run '~/.tmux/plugins/tpm/tpm'
 
 # set pane-border-style 'fg=5 bg=default'
 # set pane-active-border-style 'fg=#00ff32 bg=default'
@@ -368,15 +368,15 @@ run '~/.tmux/plugins/tpm/tpm'
 # set window-status-activity-style 'bg=default fg=#ffffff'
 # set window-status-bell-style 'bg=default fg=7'
 # set window-status-last-style 'bg=default fg=7'
-set pane-border-style 'fg=#cccccc bg=default'
-set pane-active-border-style 'fg=#00ff32 bg=default'
-set window-style 'bg=default fg=#cccccc'
-set window-active-style 'fg=#00ff32 bg=default'
-set window-status-style 'bg=default fg=#00ff32'
-set status-left-style 'bg=default fg=#00ff32'
-set status-right-style 'bg=default fg=#00ff32'
-set status-style 'bg=default fg=#00ff32'
-set window-status-activity-style 'bg=default fg=#00ff32'
+set pane-border-style 'fg=#888888 bg=default'
+set pane-active-border-style 'fg=#44ffff bg=default'
+set window-style 'bg=default fg=#888888'
+set window-active-style 'fg=#cccccc bg=default'
+set window-status-style 'bg=default fg=#44ffff'
+set status-left-style 'bg=default fg=#44ffff'
+set status-right-style 'bg=default fg=#44ffff'
+set status-style 'bg=default fg=#44ffff'
+set window-status-activity-style 'bg=default fg=#44ffff'
 set window-status-last-style 'bg=default fg=#ff0000'
 
 set-option -g status-justify left
