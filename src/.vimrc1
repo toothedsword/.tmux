@@ -1,0 +1,79 @@
+" highlight myC0 ctermfg=50 cterm=bold
+highlight myC0 ctermfg=41 cterm=bold
+" highlight myC0 ctermfg=39 cterm=bold
+" highlight myC0 ctermfg=208 cterm=bold
+highlight myC1 ctermfg=158 cterm=bold
+highlight myC8 ctermfg=86 cterm=none
+highlight myC2 ctermfg=80 cterm=none
+" highlight myC3 ctermfg=116 cterm=underline
+highlight myC3 ctermfg=116 cterm=underline
+highlight myC4 ctermfg=41 cterm=bold,italic
+highlight myC6 ctermfg=196 cterm=bold,italic
+highlight myC5 ctermfg=159
+highlight myC7 ctermfg=117
+" 2match myC1 /\v[A-Za-z0-9\_]*\./
+
+syntax match myC0 /\v([ \(\[\{])@<=[a-zA-Z\_][a-zA-Z0-9\_]*(\.)@=/
+syntax match myC0 /\v^[a-zA-Z\_][a-zA-Z0-9\_]*(\.)@=/
+syntax match myC2 /\v[a-zA-Z\_][a-zA-Z0-9\_]*(\()@=/
+syntax match myC3 /\v##.*/
+syntax match myC5 /\v[^ \'\"\,\;\(\)\[\]\{\}]+(\=)@=/
+syntax match myC6 /\v([ \(])@<=[a-zA-Z](\.)@=/
+syntax match myC6 /\v^[a-zA-Z](\.)@=/
+syntax match myC1 /\v[a-zA-Z0-9\_]+ (\=)@=/
+" syntax match myC7 /\v\.@<=[^ \.\(\)\[\]\{\}]+/
+" syntax match myC6 /\vb( \=)@=/
+
+" for perl
+" syntax match myC6 /\v(\@)@<=[^ \.\(\)\[\]\{\}]+/
+
+" for English
+" syntax match myC6 /\v([^:]+) :.*(\1)/
+
+"-----rain----
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+let g:rbpt_colorpairs = [
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['Darkblue',    'SkyBlue1'],
+    \ ['brown',       'DarkSlateGray1'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['red',         'firebrick3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['darkgray',    'SkyBlue2'],
+    \ ['darkcyan',    'DarkSlateGray2'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'LightSlateBlue'],
+    \ ]
+
+
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+let g:rainbow_active = 1 
+
