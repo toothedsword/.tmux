@@ -124,7 +124,7 @@ tmux_conf_theme_window_status_format='¶#I #W#{?window_bell_flag,🔔,}#{?window
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_current_fg='#ffffff'      # black
+tmux_conf_theme_window_status_current_fg='#dddddd'      # black
 tmux_conf_theme_window_status_current_bg='default'      # light blue
 tmux_conf_theme_window_status_current_attr='underscore' #, bold'
 #tmux_conf_theme_window_status_current_format='#I #W'

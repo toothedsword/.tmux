@@ -26,7 +26,7 @@ my $m = shift;
 system("tmux set synchronize-panes");
 
 if ($m) {
-    system("tmux source ~/.tmux.conf.1");
+    system("tmux source ~/.tmux.conf");
 } else {
     system("tmux set pane-border-style 'fg=#ff0000 bg=default'");
     system("tmux set window-style 'bg=default fg=#ff0000'");

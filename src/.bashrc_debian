@@ -1,0 +1,265 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    #alias grep='grep --color=auto'
+    #alias fgrep='fgrep --color=auto'
+    #alias egrep='egrep --color=auto'
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# some more ls aliases
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+alias ll='ls -lh'
+
+# some more ls aliases
+alias la='ls -A'
+alias l='ls -CF'
+alias duh='du -h --max-depth=1'
+alias pip='pip3 -i https://pypi.tuna.tsinghua.edu.cn/simple/ '
+alias ads='ssh -XY  10.1.100.92'
+alias wads='ssh -XY  -p 122 1.119.5.181'
+alias left='ssh 192.168.1.101'
+alias bl='ssh 10.1.6.71'
+alias right='ssh 192.168.1.102'
+alias center='ssh 192.168.1.103'
+alias ccat='/home/leon/bin/ccat-dir/linux-amd64-1.1.0/ccat --color=always '
+alias less='less -R '
+alias df='df -x squashfs -x tmpfs -x devtmpfs'
+alias s=screen
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWCOLORHINTS=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+# export PROMPT_COMMAND=' __git_ps1 "\n[\e[33m][[\e[m]\A [\e[31m]\u[\e[m]@[\e[32m]\h [\e[34;01m]\l[\e[m] [\e[36m]\w[\e[m]" "[\e[33m]][\e[m]\n$ "'
+
+
+# export PS1='\[\033[0;31m\]\u->\[\033[0m\]\[\033[0;34m\]$PWD/\[\033[0m\] \[\033[0;36m\]`date`\n◻◼ '
+# export PS1='\[\033[0;31m\]\u->\[\033[0m\]\[\033[4;34m\]$PWD/\[\033[0m\] \[\033[0;36m\]`git.pl 2>/dev/null|sed "s/🎈//"`\n\[\033[0;36m\]`~/.bash/bash_run.pl 2>/dev/null`\[\033[0;35m\] ' 
+# export PS1='\[\033[0;31m\]\u~>\[\033[0m\]\[\033[4;34m\]$PWD/\[\033[0m\] \[\033[0;36m\]\n\[\033[4;36m\]  \[\033[0;35m\] ' 
+# `~/.bash/bash_run.pl 2>/dev/null` 
+# export PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \[\033[0;36m\]\h \[\033[4;35m\]$PWD\[\033[0;32m\]$(__git_ps1)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[1;32m\] ▶\[\033[3;0m\] '
+# export PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\]@\[\033[0;36m\]\h:\[\033[4;35m\]$PWD\[\033[0;32m\]$(__git_ps1)\n\[\033[0m\033[0;32m\]\[\033[0m\033[1;32m\]__\[\033[3;0m\] '
+export PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\]@\[\033[0;36m\]localhost:\[\033[4;35m\]$PWD\[\033[0;32m\]\n\[\033[0m\033[0;32m\]\[\033[0m\033[1;32m\]__\[\033[3;0m\] '
+
+
+PATH="/home/leon/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/leon/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/leon/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/leon/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/leon/perl5"; export PERL_MM_OPT;
+
+export EDITOR=vim
+
+alias d31='ssh ads@10.24.237.31'
+alias c8='ssh 10.1.6.117'
+alias wc8='ssh -p 122 1.119.5.181'
+
+alias nat='ssh -XY 9a730b6f1593ef51.natapp.cc -p 3377'
+alias toothedsword='ssh toothedsword.natapp1.cc -p 3377'
+alias tw='toothedsword'
+alias v='viewnior '
+alias em='emacs -nw'
+# alias unzip='unzip -O CP936'
+alias tmux="env TERM=screen-256color tmux"
+alias dt="date | sed 's/[^0-9:][^0-9:]*/-/g' | sed 's/- *$//' | sed 's/://g'"
+alias tmux3='tmux -L leon3 -f ~/.tmux.conf.leon3-hc'
+alias tmux2='tmux -L leon2 -f ~/.tmux.conf.leon2-hc'
+alias tmux1='tmux -L leon1 -f ~/.tmux.conf.leon1-hc'
+alias tmux0='tmux -L leon -f ~/.tmux.conf'
+alias xml='xmllint --format'
+alias dc=cd
+alias r='rsync -avr  --progress --stats'
+# alias fuck=thefuck
+# eval "$(thefuck --alias)"
+# eval $(thefuck --alias --enable-experimental-instant-mode)
+# alias f=fuck
+
+export PATH=/home/leon/bin:$PATH:/home/leon/src/docker-slim/dist_linux/
+export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
+
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#    tmux attach -t default || tmux new -s default
+# fi
+
+export TMUX_TMPDIR=~/.tmux/tmp
+
+alias amz1='tmux renamew amz1; ssh -i ~/.ssh/PIE-MeteorologicalSecurity ec2-user@52.83.164.171'
+alias amz2='tmux renamew amz2; ssh -i ~/.ssh/PIE-MeteorologicalSecurity ec2-user@52.83.197.242'
+alias amz3='tmux renamew amz3; ssh -i ~/.ssh/PIE-MeteorologicalSecurity ec2-user@52.83.105.168'
+alias amz4='tmux renamew amz4; ssh -i ~/.ssh/PIE-MeteorologicalSecurity ec2-user@161.189.52.77'
+
+alias a1='ssh -i ~/.ssh/PIE-MeteorologicalSecurity ec2-user@52.83.164.171'
+alias a2='ssh -i ~/.ssh/PIE-MeteorologicalSecurity ec2-user@52.83.197.242'
+alias a3='ssh -i ~/.ssh/PIE-MeteorologicalSecurity ec2-user@52.83.105.168'
+alias a4='ssh -i ~/.ssh/PIE-MeteorologicalSecurity ec2-user@161.189.52.77'
+
+# export QT_DEBUG_PLUGINS=1
+# export QT_QPA_PLATFORM=offscreen
+
+alias g2hp='echo 5432; autossh -N -M 3343 -L 0.0.0.0:5432:localhost:2222 root@47.104.176.209'
+alias hp2ads="autossh -N -M 5403 -L 0.0.0.0:5532:10.24.237.31:22 -p 5432 localhost"
+alias hp2ms="echo 5632; autossh -N -M 6415 -L 0.0.0.0:5632:10.25.8.124:22 -p 5432 localhost"
+alias hp2ms5="autossh -N -M 6416 -L 0.0.0.0:5732:10.25.8.126:22 -p 5432 127.0.0.1"
+alias hp2fydq="echo 5380; autossh -N -M 6413 -L 0.0.0.0:5380:10.25.20.153:80 -p 5432 localhost"
+
+alias a_ms2tc='echo 4521; autossh -N -M 4526 -L 0.0.0.0:4521:10.40.23.147:22 -p 5632 masrun@localhost'
+
+alias hp32ms="autossh -N -M 6489 -L 0.0.0.0:7854:10.25.8.124:22 -p 7654 127.0.0.1"
+
+alias g2xx='echo 4321; autossh -N -M 4622 -L 0.0.0.0:4321:localhost:3333 root@47.104.176.209'
+alias xx2nmc='echo 4421; autossh -N -M 4422 -L 0.0.0.0:4421:10.28.49.233:22 -p 4321 localhost'
+alias nmc2nmic='echo 4521; autossh -N -M 4427 -L 0.0.0.0:4521:10.0.66.92:36 -p 4421 root@localhost'
+alias xx2map='echo 4921; autossh -N -M 4922 -L 0.0.0.0:4921:10.40.16.46:80 -p 4321 localhost'
+
+alias l2hp='echo 5432; autossh -N -M 9357 -L 0.0.0.0:5432:localhost:2244 -i PIE-MeteorologicalSecurity ec2-user@161.189.52.77'
+alias l32hp='echo 5432; autossh -N -M 9878 -L 0.0.0.0:5432:localhost:2244 -i PIE-MeteorologicalSecurity ec2-user@52.83.105.168'
+alias l22hp='echo 5432; autossh -N -M 9872 -L 0.0.0.0:5432:localhost:2244 -i PIE-MeteorologicalSecurity ec2-user@52.83.197.242'
+alias l2xx='echo 4321; autossh -N -M 8624 -L 0.0.0.0:4321:localhost:3333 -i PIE-MeteorologicalSecurity ec2-user@161.189.52.77'
+
+alias xx2hp='echo 5432; autossh -N -M 9351 -L 0.0.0.0:5432:localhost:2222 -p 4321 localhost'
+alias xx2nmc='echo 4421; autossh -N -M 4422 -L 0.0.0.0:4421:10.28.49.233:22 -p 4321 localhost'
+alias xx2tc='echo 4521; autossh -N -M 4522 -L 0.0.0.0:4521:10.40.23.147:22 -p 4321 localhost'
+
+alias ms2tc='echo 4521; autossh -N -M 4522 -L 0.0.0.0:4521:10.40.23.147:22 masrun@10.25.8.124'
+alias ms2nmc='echo 4421; autossh -N -M 4422 -L 0.0.0.0:4421:10.28.49.233:22 masrun@10.25.8.124'
+alias ms2nmc='echo 4425; autossh -N -M 4424 -L 0.0.0.0:8090:10.28.49.233:8090 masrun@10.25.8.124'
+alias ms2ads='echo 5532; autossh -N -M 4622 -L 0.0.0.0:5532:10.24.237.31:22 -p 5632 masrun@localhost'
+
+alias a_ms2nmc='echo 3322; autossh -N -M 3344 -L 0.0.0.0:3322:10.28.49.233:22 -p 5632 masrun@localhost'
+alias a_ms2nmc_web='echo 8090; autossh -N -M 8091 -L 0.0.0.0:8090:10.28.49.233:8090 -p 5632 masrun@localhost'
+alias a_ms2nmc_gs='echo 8080; autossh -N -M 8081 -L 0.0.0.0:8080:10.28.49.233:8080 -p 5632 masrun@localhost'
+
+alias nmc2nmic='echo 4521; autossh -N -M 4427 -L 0.0.0.0:4521:10.0.66.92:36 -p 4421 root@localhost'
+
+alias tc='ssh -p 4521 global_tc_pic@localhost'
+alias p3='conda activate p310'
+alias wechat='nohup /opt/apps/com.qq.weixin.deepin/files/run.sh >/dev/null 2>&1 &'
+alias wemeet='nohup /opt/wemeet/wemeetapp.sh >/dev/null 2>&1 &'
+alias s037='ssh root@172.18.10.2'
+alias sshp='ssh localhost -p 5432'
+alias s43='ssh root@172.18.10.19'
+alias hx='ssh -p 2122 songy_hx@221.122.67.136'
+
+export TOKEN_NASA='eyJ0eXAiOiJKV1QiLCJvcmlnaW4iOiJFYXJ0aGRhdGEgTG9naW4iLCJzaWciOiJlZGxqd3RwdWJrZXlfb3BzIiwiYWxnIjoiUlMyNTYifQ.eyJ0eXBlIjoiVXNlciIsInVpZCI6InRvb3RoZWRzd29yZCIsImV4cCI6MTY2ODYwMzAxNSwiaWF0IjoxNjYzNDE5MDE1LCJpc3MiOiJFYXJ0aGRhdGEgTG9naW4ifQ.564iB7ylxIvmyy4Sc9kZSuEU928TTDWdBfhHGDeRQQ54w2OPSSuDiM78k3d-hYW9i2voPVvp0QUB3BmhQd_y5M9OM1o4ico-oSSh51qoAHBlBuBaeO6hkObUXmqfwVgAT5Q0SKu7hLoJL8xXmhzsWO5iz1nPCgHfq0-HxJuIpzye0j6mcS9V4HfFqVnV3zgQ8OMQZoF4fT3nyOlnWWbL2A-rEEmEc3mD879onEDb4o1LtALHm5BbHa0X28PvEl_SHePTkJitC22TZL7kKj1fvCl_TRGCwCQt6ywXlsNJ8LMy4vY7LeSTVIdvcLf5OYxmQFFYFsDfMheaNexZEOjqIQ'
+
+CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/local/MATLAB/MATLAB_Runtime/v97/extern/include/
+export CPLUS_INCLUDE_PATH
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/leon/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+    conda deactivate
+else
+    if [ -f "/home/leon/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/leon/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/leon/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
